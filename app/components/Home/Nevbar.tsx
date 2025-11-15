@@ -8,7 +8,7 @@ import Link from "next/link";
 const dropdownData = {
   student: [
     { label: "Intern", href: "/student/intern" },
-    { label: "Graduate / Bachelor's", href: "/student/graduate/bacholors" },
+    { label: "Graduate / Bachelor's", href: "/student/graduate" },
     { label: "Unemployed", href: "/student/unemployed" },
     { label: "MS / PhD", href: "/student/ms-phd" },
   ],
