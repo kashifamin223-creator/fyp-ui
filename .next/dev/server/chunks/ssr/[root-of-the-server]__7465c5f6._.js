@@ -23,14 +23,49 @@ function Form() {
     const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [password, setPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
     const [confirmPassword, setConfirmPassword] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("");
+    const [errors, setErrors] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({});
+    const [submitted, setSubmitted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const validateEmail = (emailValue)=>{
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(emailValue);
+    };
+    const validatePassword = (passwordValue)=>{
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        return passwordRegex.test(passwordValue);
+    };
+    const validateForm = ()=>{
+        const newErrors = {};
+        if (!email.trim()) {
+            newErrors.email = "Email is required";
+        } else if (!validateEmail(email)) {
+            newErrors.email = "Please enter a valid email address";
+        }
+        if (!password) {
+            newErrors.password = "Password is required";
+        } else if (!validatePassword(password)) {
+            newErrors.password = "Password must be at least 8 characters with uppercase, lowercase, and number";
+        }
+        if (!confirmPassword) {
+            newErrors.confirmPassword = "Please confirm your password";
+        } else if (password !== confirmPassword) {
+            newErrors.confirmPassword = "Passwords do not match";
+        }
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
     const handleSubmit = (e)=>{
         e.preventDefault();
-        if (password !== confirmPassword) {
-            alert("Passwords do not match!");
-            return;
+        setSubmitted(true);
+        if (validateForm()) {
+            console.log("Email:", email);
+            console.log("Password:", password);
+            alert("Account created successfully!");
+            setEmail("");
+            setPassword("");
+            setConfirmPassword("");
+            setErrors({});
+            setSubmitted(false);
         }
-        console.log("Email:", email);
-        console.log("Password:", password);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "flex min-h-screen items-center justify-center bg-gray-100",
@@ -43,7 +78,7 @@ function Form() {
                     children: "Sign Up"
                 }, void 0, false, {
                     fileName: "[project]/app/components/signup/signupform.tsx",
-                    lineNumber: 29,
+                    lineNumber: 77,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -54,25 +89,33 @@ function Form() {
                             children: "Email Address"
                         }, void 0, false, {
                             fileName: "[project]/app/components/signup/signupform.tsx",
-                            lineNumber: 34,
+                            lineNumber: 82,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             type: "email",
-                            required: true,
                             value: email,
                             onChange: (e)=>setEmail(e.target.value),
-                            className: "w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring focus:ring-blue-400",
+                            onBlur: ()=>validateForm(),
+                            className: `w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring ${errors.email ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-blue-400"}`,
                             placeholder: "Enter your email"
                         }, void 0, false, {
                             fileName: "[project]/app/components/signup/signupform.tsx",
-                            lineNumber: 37,
+                            lineNumber: 85,
                             columnNumber: 11
+                        }, this),
+                        errors.email && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-red-500 text-sm mt-1",
+                            children: errors.email
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/signup/signupform.tsx",
+                            lineNumber: 98,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/signup/signupform.tsx",
-                    lineNumber: 33,
+                    lineNumber: 81,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -83,25 +126,41 @@ function Form() {
                             children: "Password"
                         }, void 0, false, {
                             fileName: "[project]/app/components/signup/signupform.tsx",
-                            lineNumber: 48,
+                            lineNumber: 103,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             type: "password",
-                            required: true,
                             value: password,
                             onChange: (e)=>setPassword(e.target.value),
-                            className: "w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring focus:ring-blue-400",
+                            onBlur: ()=>validateForm(),
+                            className: `w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring ${errors.password ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-blue-400"}`,
                             placeholder: "Create a password"
                         }, void 0, false, {
                             fileName: "[project]/app/components/signup/signupform.tsx",
-                            lineNumber: 51,
+                            lineNumber: 106,
+                            columnNumber: 11
+                        }, this),
+                        errors.password && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-red-500 text-sm mt-1",
+                            children: errors.password
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/signup/signupform.tsx",
+                            lineNumber: 119,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-xs text-gray-500 mt-1",
+                            children: "Min 8 chars, 1 uppercase, 1 lowercase, 1 number"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/signup/signupform.tsx",
+                            lineNumber: 121,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/signup/signupform.tsx",
-                    lineNumber: 47,
+                    lineNumber: 102,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -112,34 +171,43 @@ function Form() {
                             children: "Confirm Password"
                         }, void 0, false, {
                             fileName: "[project]/app/components/signup/signupform.tsx",
-                            lineNumber: 62,
+                            lineNumber: 127,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                             type: "password",
-                            required: true,
                             value: confirmPassword,
                             onChange: (e)=>setConfirmPassword(e.target.value),
-                            className: "w-full border border-gray-300 px-4 py-2 rounded-lg focus:outline-none focus:ring focus:ring-blue-400",
+                            onBlur: ()=>validateForm(),
+                            className: `w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring ${errors.confirmPassword ? "border-red-500 focus:ring-red-400" : "border-gray-300 focus:ring-blue-400"}`,
                             placeholder: "Re-enter your password"
                         }, void 0, false, {
                             fileName: "[project]/app/components/signup/signupform.tsx",
-                            lineNumber: 65,
+                            lineNumber: 130,
                             columnNumber: 11
+                        }, this),
+                        errors.confirmPassword && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                            className: "text-red-500 text-sm mt-1",
+                            children: errors.confirmPassword
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/signup/signupform.tsx",
+                            lineNumber: 143,
+                            columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/signup/signupform.tsx",
-                    lineNumber: 61,
+                    lineNumber: 126,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                     type: "submit",
-                    className: "w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition",
-                    children: "Create Account"
+                    className: "w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition disabled:bg-gray-400",
+                    disabled: submitted,
+                    children: submitted ? "Creating Account..." : "Create Account"
                 }, void 0, false, {
                     fileName: "[project]/app/components/signup/signupform.tsx",
-                    lineNumber: 75,
+                    lineNumber: 147,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -153,24 +221,24 @@ function Form() {
                             children: "Login"
                         }, void 0, false, {
                             fileName: "[project]/app/components/signup/signupform.tsx",
-                            lineNumber: 84,
+                            lineNumber: 157,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/app/components/signup/signupform.tsx",
-                    lineNumber: 82,
+                    lineNumber: 155,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/app/components/signup/signupform.tsx",
-            lineNumber: 25,
+            lineNumber: 73,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/components/signup/signupform.tsx",
-        lineNumber: 24,
+        lineNumber: 72,
         columnNumber: 5
     }, this);
 }
