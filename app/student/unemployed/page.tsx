@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import Navbar from "../../components/Home/Nevbar";
-import UnemployedDasbard from "../../components/unemployeed/unemployeedasboard";
-import UnemployeeForm from "../../components/unemployeed/unemployeeform";
-import TherapyPlayer from "../../components/unemployeed/therapyplayer";
+import UnemployedDasbard from "../../components/unemployed/unemployeedasboard";
+import UnemployeeForm from "../../components/unemployed/unemployeeform";
+import TherapyPlayer from "../../components/unemployed/therapyplayer";
 export default function UnemployedPage() {
   const [submittedData, setSubmittedData] = useState<any | null>(null);
   const [therapyClicked, setTherapyClicked] = useState(false);
@@ -16,7 +16,7 @@ export default function UnemployedPage() {
       <Navbar />
 
       {/* Form first (full-width), then therapy control; dashboard appears after submit + therapy */}
-      <main className="max-w-6xl mx-auto mt-8 p-6 grid grid-cols-1 gap-8 items-start">
+      <main className="mx-auto p-6 grid grid-cols-1 gap-8 items-start">
         <div>
           <UnemployeeForm
             onSubmit={(data) => {

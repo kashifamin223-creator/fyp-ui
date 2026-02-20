@@ -1,6 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/page": "app/page.js",
+  "/professionals/employed/page": "app/professionals/employed/page.js",
+  "/professionals/old-age/page": "app/professionals/old-age/page.js",
+  "/professionals/parents/page": "app/professionals/parents/page.js",
+  "/student/graduate/page": "app/student/graduate/page.js",
   "/student/intern/page": "app/student/intern/page.js",
-  "/student/unemployeed/page": "app/student/unemployeed/page.js"
+  "/student/unemployed/page": "app/student/unemployed/page.js"
 }
