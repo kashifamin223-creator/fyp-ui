@@ -21,10 +21,6 @@ export default function OldAgePage() {
           <TherapyPlayerOldAge initialYouTubeId={recommendedId ?? defaultVideoId} />
         </div>
       </main>
-
-      <footer className="mt-12 p-6 text-center text-[#065F46]">
-        &copy; {new Date().getFullYear()} Healthcare Support. All rights reserved.
-      </footer>
     </div>
   );
 }

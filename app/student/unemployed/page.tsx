@@ -39,12 +39,6 @@ export default function UnemployedPage() {
           </div>
         )}
       </main>
-    
-    
-      {/* Footer */}
-      <footer className="mt-12 p-6 text-center text-[#065F46]">
-        &copy; {new Date().getFullYear()} Healthcare Support. All rights reserved.
-      </footer>
     </div>
   );
 }

@@ -11,10 +11,6 @@ export default function GraduatePage() {
       <section className="mx-auto p-6">
         <Graduate />
       </section>
-
-      <footer className="mt-12 p-6 text-center text-[#065F46]">
-        &copy; {new Date().getFullYear()} Healthcare Support. All rights reserved.
-      </footer>
     </div>
   );
 }

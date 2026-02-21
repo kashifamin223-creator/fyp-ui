@@ -89,8 +89,8 @@ const dropdownData = {
     ],
     children: [
         {
-            label: "Trauma",
-            href: "/children/trauma"
+            label: "Trauma Support",
+            href: "/trauma-children"
         },
         {
             label: "Harassment",

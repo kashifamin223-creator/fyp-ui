@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTheme } from "../ThemeContext";
 
 interface Props {
   label: string;
@@ -8,10 +9,16 @@ interface Props {
 }
 
 export default function NavItem({ label, href }: Props) {
+  const { theme } = useTheme();
+  
   return (
     <Link 
       href={href} 
-      className="text-gray-700 hover:text-blue-600 transition font-medium"
+      className={`transition font-medium ${
+        theme === 'dark' 
+          ? 'text-gray-300 hover:text-gray-100' 
+          : 'text-gray-700 hover:text-blue-600'
+      }`}
     >
       {label}
     </Link>
