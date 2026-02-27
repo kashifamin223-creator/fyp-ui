@@ -1,16 +1,9 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/about/page": "app/about/page.js",
-  "/child-abuse/page": "app/child-abuse/page.js",
-  "/harassment/page": "app/harassment/page.js",
-  "/page": "app/page.js",
-  "/professionals/employed/page": "app/professionals/employed/page.js",
-  "/professionals/old-age/page": "app/professionals/old-age/page.js",
-  "/professionals/parents/page": "app/professionals/parents/page.js",
+  "/home/page": "app/home/page.js",
   "/references/page": "app/references/page.js",
+  "/register/page": "app/register/page.js",
   "/student/graduate/page": "app/student/graduate/page.js",
   "/student/intern/page": "app/student/intern/page.js",
-  "/student/unemployed/page": "app/student/unemployed/page.js",
-  "/trauma-children/page": "app/trauma-children/page.js",
-  "/trauma/page": "app/trauma/page.js"
+  "/trauma-children/page": "app/trauma-children/page.js"
 }
