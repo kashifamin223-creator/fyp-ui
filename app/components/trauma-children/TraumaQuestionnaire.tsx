@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { apiService, handleApiResponse, UserSession } from "../../services/api";
 
 interface Question {
   id: number;
@@ -115,11 +116,17 @@ export default function TraumaQuestionnaire() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<number[]>(new Array(traumaQuestions.length).fill(-1));
   const [showResults, setShowResults] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string>('');
 
   const handleAnswer = (questionIndex: number, optionIndex: number) => {
     const newAnswers = [...answers];
     newAnswers[questionIndex] = optionIndex;
     setAnswers(newAnswers);
+  };
+
+  const calculateResults = () => {
+    submitForm();
   };
 
   const nextQuestion = () => {
@@ -136,8 +143,44 @@ export default function TraumaQuestionnaire() {
     }
   };
 
-  const calculateResults = () => {
-    setShowResults(true);
+  const submitForm = async () => {
+    setIsSubmitting(true);
+    setSubmitError('');
+    
+    try {
+      // Get current user ID from session
+      const user = UserSession.getUser();
+      const userId = user?.id || 0;
+      
+      const formData = {
+        userid: userId,
+        q1: answers[0] !== -1 ? traumaQuestions[0].scores[answers[0]] : 0,
+        q2: answers[1] !== -1 ? traumaQuestions[1].scores[answers[1]] : 0,
+        q3: answers[2] !== -1 ? traumaQuestions[2].scores[answers[2]] : 0,
+        q4: answers[3] !== -1 ? traumaQuestions[3].scores[answers[3]] : 0,
+        q5: answers[4] !== -1 ? traumaQuestions[4].scores[answers[4]] : 0,
+        q6: answers[5] !== -1 ? traumaQuestions[5].scores[answers[5]] : 0,
+        q7: answers[6] !== -1 ? traumaQuestions[6].scores[answers[6]] : 0,
+        q8: answers[7] !== -1 ? traumaQuestions[7].scores[answers[7]] : 0,
+        q9: answers[8] !== -1 ? traumaQuestions[8].scores[answers[8]] : 0,
+      };
+
+      const success = handleApiResponse(
+        await apiService.submitTraumaForm(formData),
+        (data) => {
+          console.log("Trauma form submitted successfully:", data);
+          setShowResults(true);
+        },
+        (error) => {
+          console.error("Trauma form submission failed:", error);
+          setSubmitError(error || 'Failed to submit form');
+          // Still show results even if submission fails
+          setShowResults(true);
+        }
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const getTotalScore = () => {
@@ -165,6 +208,16 @@ export default function TraumaQuestionnaire() {
 
     return (
       <div className="text-center">
+        {isSubmitting && (
+          <div className="mb-4 text-blue-600">
+            Submitting your assessment...
+          </div>
+        )}
+        {submitError && (
+          <div className="mb-4 text-red-600 bg-red-50 p-3 rounded-lg">
+            Warning: {submitError}. Your results are still shown below.
+          </div>
+        )}
         <div className="mb-6">
           <div className={`text-6xl mb-4 ${
             stressLevel.color === 'green' ? 'text-green-500' :
@@ -218,19 +271,19 @@ export default function TraumaQuestionnaire() {
   const progress = ((currentQuestion + 1) / traumaQuestions.length) * 100;
 
   return (
-    <div>
-      <div className="mb-6">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-sm font-medium text-gray-600">
+    <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+      <div className="mb-4 sm:mb-6">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2 space-y-2 sm:space-y-0">
+          <span className="text-xs sm:text-sm font-medium text-gray-600">
             Question {currentQuestion + 1} of {traumaQuestions.length}
           </span>
-          <span className="text-sm font-medium text-gray-600">
+          <span className="text-xs sm:text-sm font-medium text-gray-600">
             {Math.round(progress)}% Complete
           </span>
         </div>
-        <div className="bg-gray-200 rounded-full h-2">
+        <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
           <div 
-            className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+            className="bg-blue-600 h-2 sm:h-3 rounded-full transition-all duration-300"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
@@ -282,14 +335,14 @@ export default function TraumaQuestionnaire() {
         </button>
         <button
           onClick={nextQuestion}
-          disabled={answers[currentQuestion] === -1}
+          disabled={answers[currentQuestion] === -1 || isSubmitting}
           className={`px-6 py-2 rounded-lg transition ${
-            answers[currentQuestion] === -1
+            answers[currentQuestion] === -1 || isSubmitting
               ? "bg-gray-100 text-gray-400 cursor-not-allowed"
               : "bg-blue-600 text-white hover:bg-blue-700"
           }`}
         >
-          {currentQuestion === traumaQuestions.length - 1 ? "See Results" : "Next"}
+          {isSubmitting ? "Submitting..." : currentQuestion === traumaQuestions.length - 1 ? "See Results" : "Next"}
         </button>
       </div>
     </div>

@@ -6,7 +6,7 @@ export default function Footer() {
   const { theme } = useTheme();
   
   return (
-    <footer className={`py-8 px-8 mt-auto ${
+    <footer className={`py-4 px-4 mt-auto ${
       theme === 'dark' 
         ? 'bg-gray-900 text-gray-300' 
         : 'bg-[#E6F7F1] text-[#065F46]'
@@ -37,10 +37,8 @@ export default function Footer() {
               <li><a href="/references" className={`hover:text-blue-400 transition ${
                 theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
               }`}>References</a></li>
-              <li><a href="/contact" className={`hover:text-blue-400 transition ${
-                theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-              }`}>Contact</a></li>
-              <li><a href="/privacy" className={`hover:text-blue-400 transition ${
+              
+              <li><a href="/home" className={`hover:text-blue-400 transition ${
                 theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
               }`}>Privacy Policy</a></li>
             </ul>
@@ -50,28 +48,26 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/student" className={`hover:text-blue-400 transition ${
+              <li><a href="/student/intern" className={`hover:text-blue-400 transition ${
                 theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
               }`}>Student Support</a></li>
-              <li><a href="/children" className={`hover:text-blue-400 transition ${
+              <li><a href="/trauma" className={`hover:text-blue-400 transition ${
                 theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
               }`}>Children Services</a></li>
-              <li><a href="/professionals" className={`hover:text-blue-400 transition ${
+              <li><a href="/professionals/employed" className={`hover:text-blue-400 transition ${
                 theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
               }`}>Professional Help</a></li>
-              <li><a href="/emergency" className={`hover:text-blue-400 transition ${
-                theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-              }`}>Emergency Support</a></li>
+              
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4">Get Help</h4>
+            <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
               <li className="flex items-center">
                 <span className="mr-2">📞</span>
-                <span>Helpline: 1-800-MENTAL</span>
+                <span>Helpline: +92311-7786264 / 0800-69457 / For Child Abuse 1121</span>
               </li>
               <li className="flex items-center">
                 <span className="mr-2">✉️</span>
@@ -90,10 +86,8 @@ export default function Footer() {
             ? 'border-gray-700 text-gray-400' 
             : 'border-[#D1FAE5] text-gray-600'
         }`}>
-          <p>&copy; 2024 Mental Healthcare Therapy. All rights reserved.</p>
-          <p className="mt-2">
-            If you're in crisis, please call emergency services immediately.
-          </p>
+          <p>&copy; 2026 Mental Healthcare Therapy. All rights reserved.</p>
+          
         </div>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { submitGraduateForm } from "@/app/services/graduateApi";
 
 const QUESTIONS: string[] = [
   "I feel confident in my job-search skills (CV/interview).",
@@ -29,6 +30,8 @@ export default function GraduateQuestionnaire({ onSubmit, onRecommend }: Props) 
   const [agreeAnswers, setAgreeAnswers] = useState<number[]>(Array(QUESTIONS.length).fill(-1));
   const [submitted, setSubmitted] = useState(false);
   const [stats, setStats] = useState<any | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   function toggleTreatment(value: string) {
     setTreatment((prev) => (prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]));
@@ -40,60 +43,98 @@ export default function GraduateQuestionnaire({ onSubmit, onRecommend }: Props) 
     setAgreeAnswers(copy);
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
-    // Build an array of 0/1 for only the answered items to compute unbiased stats
-    const allValues = agreeAnswers.map((v) => (v === 1 ? 1 : 0));
-    const answeredValues = allValues.filter((_, i) => agreeAnswers[i] !== -1);
-    const answeredCount = answeredValues.length;
-    const useValues = answeredCount > 0 ? answeredValues : allValues; // fallback when nothing answered
-    const denom = useValues.length;
-const agreeSum = useValues.reduce<number>((a, b) => a + b, 0);
-    const agreePercent = Math.round((agreeSum / denom) * 100);
-    const mean = agreeSum / denom;
+    setError(null);
+    setIsLoading(true);
 
-const variance =
-  useValues.reduce<number>((acc, val) => acc + Math.pow(val - mean, 2), 0) / denom;
+    try {
+      setSubmitted(true);
+      // Build an array of 0/1 for only the answered items to compute unbiased stats
+      const allValues = agreeAnswers.map((v) => (v === 1 ? 1 : 0));
+      const answeredValues = allValues.filter((_, i) => agreeAnswers[i] !== -1);
+      const answeredCount = answeredValues.length;
+      const useValues = answeredCount > 0 ? answeredValues : allValues; // fallback when nothing answered
+      const denom = useValues.length;
+      const agreeSum = useValues.reduce<number>((a, b) => a + b, 0);
+      const agreePercent = Math.round((agreeSum / denom) * 100);
+      const mean = agreeSum / denom;
+
+      const variance =
+        useValues.reduce<number>((acc, val) => acc + Math.pow(val - mean, 2), 0) / denom;
       const std = Math.sqrt(variance);
-    // For graduates, interpret agree% as better wellbeing / outlook.
-    let outlook = "Positive";
-    let stressLevel = "Low"; // Low stress when many positive responses
-    if (agreePercent >= 70) {
-      outlook = "Positive";
-      stressLevel = "Low";
-    } else if (agreePercent >= 40) {
-      outlook = "Mixed";
-      stressLevel = "Moderate";
-    } else {
-      outlook = "Challenged";
-      stressLevel = "High";
-    }
+      // For graduates, interpret agree% as better wellbeing / outlook.
+      let outlook = "Positive";
+      let stressLevel = "Low"; // Low stress when many positive responses
+      if (agreePercent >= 70) {
+        outlook = "Positive";
+        stressLevel = "Low";
+      } else if (agreePercent >= 40) {
+        outlook = "Mixed";
+        stressLevel = "Moderate";
+      } else {
+        outlook = "Challenged";
+        stressLevel = "High";
+      }
 
-    const payload = { age, gender, employmentStatus, diagnosed, treatment, agreeAnswers, answeredCount, agreeSum, agreePercent, mean, std, outlook, stressLevel };
-    setStats({ agreeSum, agreePercent, mean, std, outlook, stressLevel, answeredCount });
-    onSubmit?.(payload);
+      const localStats = { agreeSum, agreePercent, mean, std, outlook, stressLevel, answeredCount };
+      setStats(localStats);
 
-    // Recommend videos based on stress level and education/career focus
-    let recommendedId: string | null = null;
-    if (stressLevel === "High") {
-      // calming / grounding videos
-      recommendedId = "XxVg_s8xAms"; // short breathing/relaxation sample (replaceable)
-    } else if (stressLevel === "Moderate") {
-      // balance + career mindset
-      recommendedId = "3Z3-0pZV1Ww"; // example guided session
-    } else {
-      // positive / motivational video: user-provided Peter Dinklage short
-      recommendedId = "_-2OL-UhjU4";
+      // Map form data to API payload
+      const apiPayload = {
+        userid: 0,
+        id: 0,
+        age: age ? parseInt(age) : 0,
+        gender: gender,
+        education: employmentStatus,
+        diagnosed: diagnosed === "yes",
+        support: treatment.join(", "),
+        q1: agreeAnswers[0] === 1,
+        q2: agreeAnswers[1] === 1,
+        q3: agreeAnswers[2] === 1,
+        q4: agreeAnswers[3] === 1,
+        q5: agreeAnswers[4] === 1,
+        q6: agreeAnswers[5] === 1,
+        q7: agreeAnswers[6] === 1,
+        q8: agreeAnswers[7] === 1,
+        q9: agreeAnswers[8] === 1,
+      };
+
+      // Submit to API
+      const response = await submitGraduateForm(apiPayload);
+      console.log("Form submitted successfully:", response);
+
+      // Call optional callback
+      onSubmit?.({ ...apiPayload, ...localStats });
+
+      // Recommend videos based on stress level and education/career focus
+      let recommendedId: string | null = null;
+      if (stressLevel === "High") {
+        // calming / grounding videos
+        recommendedId = "XxVg_s8xAms"; // short breathing/relaxation sample (replaceable)
+      } else if (stressLevel === "Moderate") {
+        // balance + career mindset
+        recommendedId = "3Z3-0pZV1Ww"; // example guided session
+      } else {
+        // positive / motivational video: user-provided Peter Dinklage short
+        recommendedId = "_-2OL-UhjU4";
+      }
+      onRecommend?.(recommendedId);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to submit form";
+      setError(errorMessage);
+      console.error("Form submission error:", err);
+      setSubmitted(false);
+    } finally {
+      setIsLoading(false);
     }
-    onRecommend?.(recommendedId);
   }
 
   return (
     <section className="w-full bg-white p-8 rounded-xl shadow-lg">
       <div className="mb-4">
-        <h2 className="text-2xl font-extrabold text-[#064E3B]">Graduate Wellbeing & Career Check</h2>
-        <p className="text-sm text-gray-600 mt-1">A short confidential screen focused on postgraduate/job-seeking wellbeing.</p>
+        <h2 className="text-2xl font-extrabold text-[#064E3B]">Graduate Dashboard</h2>
+        <p className="text-sm text-gray-600 mt-1">Welcome — complete the quick 9-question graduate check-in and view a recommended video.</p>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -148,8 +189,16 @@ const variance =
         </div>
 
         <div className="flex items-center gap-3">
-          <button type="submit" className="px-4 py-2 bg-[#10B981] text-white rounded-lg font-medium">Submit</button>
+          <button type="submit" disabled={isLoading} className={`px-4 py-2 rounded-lg font-medium ${isLoading ? 'bg-gray-400 text-gray-600 cursor-not-allowed' : 'bg-[#10B981] text-white hover:bg-[#059669]'}`}>
+            {isLoading ? "Submitting..." : "Submit"}
+          </button>
         </div>
+
+        {error && (
+          <div className="mt-4 p-3 border border-red-300 rounded bg-red-50">
+            <p className="text-sm text-red-700"><strong>Error:</strong> {error}</p>
+          </div>
+        )}
         {stats && (
           <div className="mt-4 p-3 border rounded bg-gray-50">
             <h4 className="font-semibold">Quick analysis</h4>

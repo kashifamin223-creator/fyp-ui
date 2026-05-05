@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { submitInternForm } from "@/app/services/internApi";
 
 const QUESTIONS: string[] = [
   "I feel motivated to learn new skills.",
@@ -30,6 +31,8 @@ export default function Questionnaire({ onSubmit }: Props) {
   const [agreeAnswers, setAgreeAnswers] = useState<number[]>(Array(QUESTIONS.length).fill(-1));
   const [submitted, setSubmitted] = useState(false);
   const [stats, setStats] = useState<any | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   function toggleTreatment(value: string) {
     setTreatment((prev) => (prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]));
@@ -42,30 +45,68 @@ export default function Questionnaire({ onSubmit }: Props) {
     setAgreeAnswers(copy);
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
-    // compute simple statistics over agree/disagree (agree=1, disagree=0, unanswered treated as 0)
-    const values = agreeAnswers.map((v) => (v === 1 ? 1 : 0));
-    const agreeSum = values.reduce((a, b) => a + b, 0);
-    const agreePercent = Math.round((agreeSum / QUESTIONS.length) * 100);
-    const mean = agreeSum / QUESTIONS.length;
-    const variance = values.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / QUESTIONS.length;
-    const std = Math.sqrt(variance);
-    let stressLevel = "Low";
-    if (agreePercent >= 70) stressLevel = "High";
-    else if (agreePercent >= 40) stressLevel = "Moderate";
+    setError(null);
+    setIsLoading(true);
 
-    const payload = { age, gender, internStatus, diagnosed, treatment, agreeAnswers, agreeSum, agreePercent, mean, std, stressLevel };
-    setStats({ agreeSum, agreePercent, mean, std, stressLevel });
-    onSubmit?.(payload);
+    try {
+      setSubmitted(true);
+      // compute simple statistics over agree/disagree (agree=1, disagree=0, unanswered treated as 0)
+      const values: number[] = agreeAnswers.map((v) => (v === 1 ? 1 : 0));
+      const agreeSum = values.reduce((a: number, b: number) => a + b, 0);
+      const agreePercent = Math.round((agreeSum / QUESTIONS.length) * 100);
+      const mean = agreeSum / QUESTIONS.length;
+      const variance = values.reduce((a: number, b: number) => a + Math.pow(b - mean, 2), 0) / QUESTIONS.length;
+      const std = Math.sqrt(variance);
+      let stressLevel = "Low";
+      if (agreePercent >= 70) stressLevel = "High";
+      else if (agreePercent >= 40) stressLevel = "Moderate";
+
+      const localStats = { agreeSum, agreePercent, mean, std, stressLevel };
+      setStats(localStats);
+
+      // Map form data to API payload
+      const apiPayload = {
+        id: 0,
+        userid: 0, // TODO: Replace with actual user ID from auth
+        age: parseInt(age) || 0,
+        gender,
+        status: internStatus,
+        diagnosed: diagnosed === "yes",
+        treatment: treatment.join(", "),
+        q1: agreeAnswers[0] === 1,
+        q2: agreeAnswers[1] === 1,
+        q3: agreeAnswers[2] === 1,
+        q4: agreeAnswers[3] === 1,
+        q5: agreeAnswers[4] === 1,
+        q6: agreeAnswers[5] === 1,
+        q7: agreeAnswers[6] === 1,
+        q8: agreeAnswers[7] === 1,
+        q9: agreeAnswers[8] === 1,
+      };
+
+      // Submit to API
+      const response = await submitInternForm(apiPayload);
+      console.log("Form submitted successfully:", response);
+
+      // Call optional callback
+      onSubmit?.({ ...apiPayload, ...localStats });
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to submit form";
+      setError(errorMessage);
+      console.error("Form submission error:", err);
+      setSubmitted(false);
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
     <section className="w-full bg-white p-8 rounded-xl shadow-lg">
       <div className="mb-4">
-        <h2 className="text-2xl font-extrabold text-[#064E3B]">Wellbeing Check</h2>
-        <p className="text-sm text-gray-600 mt-1">A short confidential screen to understand how you're feeling. Your responses are private.</p>
+        <h2 className="text-2xl font-extrabold text-[#064E3B]">Intern Dashboard</h2>
+        <p className="text-sm text-gray-600 mt-1">Welcome — complete the quick 9-question check-in and try a short therapy video.</p>
       </div>
 
       <form onSubmit={handleSubmit}>
@@ -123,8 +164,16 @@ export default function Questionnaire({ onSubmit }: Props) {
         {/* PHQ section removed as requested */}
 
         <div className="flex items-center gap-3">
-          <button type="submit" className="px-4 py-2 bg-[#10B981] text-white rounded-lg font-medium">Submit</button>
+          <button type="submit" disabled={isLoading} className={`px-4 py-2 rounded-lg font-medium ${isLoading ? 'bg-gray-400 text-gray-600 cursor-not-allowed' : 'bg-[#10B981] text-white hover:bg-[#059669]'}`}>
+            {isLoading ? "Submitting..." : "Submit"}
+          </button>
         </div>
+
+        {error && (
+          <div className="mt-4 p-3 border border-red-300 rounded bg-red-50">
+            <p className="text-sm text-red-700"><strong>Error:</strong> {error}</p>
+          </div>
+        )}
         {stats && (
           <div className="mt-4 p-3 border rounded bg-gray-50">
             <h4 className="font-semibold">Stress calculation</h4>

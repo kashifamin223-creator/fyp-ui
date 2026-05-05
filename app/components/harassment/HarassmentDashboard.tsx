@@ -1,6 +1,6 @@
 "use client";
 
-import HarassmentQuestionnaire from "./HarassmentQuestionnaire";
+import QuestionnaireForm from "../database/QuestionnaireForm";
 import HarassmentVideoPlayer from "./HarassmentVideoPlayer";
 import Navbar from "../Home/Nevbar";
 
@@ -22,23 +22,6 @@ export default function HarassmentDashboard() {
             </p>
           </header>
 
-          <nav className="bg-white rounded-lg shadow-md p-4 mb-8">
-            <div className="flex flex-wrap gap-4">
-              <button className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
-                Dashboard
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">
-                Resources
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">
-                Progress
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">
-                Help
-              </button>
-            </div>
-          </nav>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-semibold text-[#DC2626] mb-4">
@@ -47,7 +30,7 @@ export default function HarassmentDashboard() {
               <p className="text-gray-600 mb-6">
                 Help us understand your experiences with these confidential questions
               </p>
-              <HarassmentQuestionnaire />
+              <QuestionnaireForm formType="harassment" showResults={true} />
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-6">

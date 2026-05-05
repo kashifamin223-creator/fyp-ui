@@ -194,7 +194,7 @@ export default function HarassmentQuestionnaire() {
           <h4 className="font-semibold mb-2 text-red-800">Important Resources:</h4>
           <ul className="text-left text-sm space-y-2">
             <li>• Talk to a trusted adult (parent, teacher, counselor)</li>
-            <li>• Call the bullying helpline: 1-800-STOP-BULLY</li>
+            <li>• Call helpline: 1121</li>
             <li>• Keep a record of what happens</li>
             <li>• Remember: It's not your fault and you deserve to be safe</li>
           </ul>

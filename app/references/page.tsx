@@ -131,32 +131,7 @@ export default function ReferencesPage() {
             </div>
           </section>
 
-          {/* Assessment Tools */}
-          <section className="mb-12">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-3xl font-bold text-[#064E3B] mb-6">Assessment Tools & Instruments</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-[#DC2626]">Trauma Assessment</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li>• <strong>Child Trauma Screening Questionnaire (CTSQ)</strong> - Scheeringa & Zeanah (2021)</li>
-                    <li>• <strong>UCLA PTSD Reaction Index</strong> - Pynoos et al. (2020)</li>
-                    <li>• <strong>Trauma Symptom Checklist for Children (TSCC)</strong> - Briere (2022)</li>
-                    <li>• <strong>Adverse Childhood Experiences (ACE) Questionnaire</strong> - Felitti et al. (1998)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-[#DC2626]">General Mental Health</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
-                    <li>• <strong>Strengths and Difficulties Questionnaire (SDQ)</strong> - Goodman (2021)</li>
-                    <li>• <strong>Patient Health Questionnaire (PHQ-9)</strong> - Kroenke et al. (2001)</li>
-                    <li>• <strong>Generalized Anxiety Disorder-7 (GAD-7)</strong> - Spitzer et al. (2006)</li>
-                    <li>• <strong>Columbia-Suicide Severity Rating Scale (C-SSRS)</strong> - Posner et al. (2011)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
+          
 
           {/* Online Resources */}
           <section className="mb-12">
@@ -166,10 +141,10 @@ export default function ReferencesPage() {
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <h3 className="font-semibold mb-3 text-blue-800">🔵 Emergency & Crisis</h3>
                   <ul className="space-y-2 text-sm">
-                    <li>• <strong>National Suicide Prevention Lifeline</strong>: 988</li>
-                    <li>• <strong>Crisis Text Line</strong>: Text HOME to 741741</li>
-                    <li>• <strong>Child Abuse Hotline</strong>: 1-800-4-A-CHILD</li>
-                    <li>• <strong>Domestic Violence Hotline</strong>: 1-800-799-7233</li>
+                    <li>• <strong>National Suicide Prevention Lifeline pakistan:Umang</strong>: 042-35765951</li>
+                    <li>• <strong>Crisis HotLine</strong>: 0800-69457</li>
+                    <li>• <strong>Child Abuse Hotline</strong>: 1121</li>
+                    <li>• <strong>Domestic Violence Hotline</strong>: 1242</li>
                   </ul>
                 </div>
                 <div className="bg-green-50 p-4 rounded-lg">
@@ -223,33 +198,19 @@ export default function ReferencesPage() {
 
           {/* Disclaimer */}
           <section className="mb-12">
-            <div className="bg-yellow-50 border-2 border-yellow-200 rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-yellow-800 mb-4">Important Disclaimer</h2>
+            <div className="bg-yellow-50 border-2 border-red-200 rounded-xl p-6">
+              <h2 className="text-2xl font-bold text-red-800 mb-4">Important Disclaimer</h2>
               <div className="text-yellow-700 space-y-2">
                 <p>
                   The information provided on this website and in these references is for educational purposes only 
                   and is not a substitute for professional medical advice, diagnosis, or treatment.
                 </p>
-                <p>
-                  Always seek the advice of your physician or other qualified health provider with any questions 
-                  you may have regarding a medical condition or mental health concern.
-                </p>
-                <p>
-                  In case of emergency, call 911 or go to your nearest emergency department immediately.
-                </p>
-              </div>
+                
+                </div>
             </div>
           </section>
 
-          {/* Last Updated */}
-          <section className="text-center">
-            <p className="text-sm text-gray-500">
-              Last updated: November 2024 | References reviewed and updated quarterly
-            </p>
-            <p className="text-sm text-gray-500 mt-2">
-              For questions about these references, please contact: research@mentalhealth.com
-            </p>
-          </section>
+          
         </div>
       </main>
     </div>

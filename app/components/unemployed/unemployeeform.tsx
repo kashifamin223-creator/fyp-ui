@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { apiService, handleApiResponse, UserSession } from "../../services/api";
 
 export default function UnemployeeForm({ onSubmit }: { onSubmit?: (data: any) => void }) {
 	const [age, setAge] = useState("");
@@ -10,36 +11,27 @@ export default function UnemployeeForm({ onSubmit }: { onSubmit?: (data: any) =>
 	const [treatment, setTreatment] = useState<string[]>([]);
 
 	const phqItems = [
-		"Little interest or pleasure in doing things",
-		"Feeling down, depressed, or hopeless",
-		"Trouble falling or staying asleep, or sleeping too much",
-		"Feeling tired or having little energy",
-		"Poor appetite or overeating",
-		"Feeling bad about yourself — or that you are a failure",
-		"Trouble concentrating on things",
-		"Moving or speaking so slowly that other people could have noticed",
-		"Thoughts that you would be better off dead or of hurting yourself",
+		"1.Little interest or pleasure in doing things",
+		"2.Feeling down, depressed, or hopeless",
+		"3.Trouble falling or staying asleep, or sleeping too much",
+		"4.Feeling tired or having little energy",
+		"5.Poor appetite or overeating",
+		"6.Feeling bad about yourself — or that you are a failure",
+		"7.Trouble concentrating on things",
+		"8.Moving or speaking so slowly that other people could have noticed",
+		"9.Thoughts that you would be better off dead or of hurting yourself",
 	];
 
 	const scenarios = [
-		{
-			id: "withdrawal",
-			text: "You've stopped going out with friends and avoid calls because it's too much effort.",
-		},
-		{
-			id: "performance",
-			text: "At applications or interviews you find it hard to focus, lose track of what to say, or cancel because of anxiety.",
-		},
-		{
-			id: "sleep",
-			text: "You wake several times at night and feel exhausted all day, making tasks difficult.",
-		},
+		
 	];
 
 	const [phqAnswers, setPhqAnswers] = useState<number[]>(Array(phqItems.length).fill(0));
 	const [scenarioAnswers, setScenarioAnswers] = useState<number[]>(Array(scenarios.length).fill(0));
 	const [notes, setNotes] = useState("");
 	const [result, setResult] = useState<string | null>(null);
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [submitError, setSubmitError] = useState<string>('');
 
 	function setPhq(index: number, value: number) {
 		const copy = [...phqAnswers];
@@ -57,6 +49,49 @@ export default function UnemployeeForm({ onSubmit }: { onSubmit?: (data: any) =>
 		setTreatment((prev) => (prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]));
 	}
 
+	const submitForm = async () => {
+		setIsSubmitting(true);
+		setSubmitError('');
+		
+		try {
+			// Get current user ID from session
+			const user = UserSession.getUser();
+			const userId = user?.id || 0;
+			
+			const formData = {
+				id: 0,
+				userid: userId,
+				age: parseInt(age) || 0,
+				gender: gender || "string",
+				employment: employmentStatus || "string",
+				diagnosed: diagnosed === "yes",
+				support: treatment.join(", ") || "string",
+				q1: phqAnswers[0] || 0,
+				q2: phqAnswers[1] || 0,
+				q3: phqAnswers[2] || 0,
+				q4: phqAnswers[3] || 0,
+				q5: phqAnswers[4] || 0,
+				q6: phqAnswers[5] || 0,
+				q7: phqAnswers[6] || 0,
+				q8: phqAnswers[7] || 0,
+				q9: phqAnswers[8] || 0,
+			};
+
+			const success = handleApiResponse(
+				await apiService.submitUnemployedForm(formData),
+				(data) => {
+					console.log("Unemployed form submitted successfully:", data);
+				},
+				(error) => {
+					console.error("Unemployed form submission failed:", error);
+					setSubmitError(error || 'Failed to submit form');
+				}
+			);
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
+
 	function handleSubmit(e: React.FormEvent) {
 		e.preventDefault();
 		const phqScore = phqAnswers.reduce((a, b) => a + b, 0);
@@ -68,12 +103,15 @@ export default function UnemployeeForm({ onSubmit }: { onSubmit?: (data: any) =>
 		setResult(summary);
 		const payload = { age, gender, employmentStatus, diagnosed, treatment, phqAnswers, scenarioAnswers, notes, phqScore, suicidal };
 		onSubmit?.(payload);
+
+		// Submit form to API
+		submitForm();
 	}
 
 	return (
 		<section className="w-full bg-white p-8 rounded-xl shadow-lg min-h-[520px]">
 			<div className="mb-4">
-				<h2 className="text-2xl font-extrabold text-[#064E3B]">Wellbeing Check</h2>
+				<h2 className="text-2xl font-extrabold text-[#064E3B]">Unemployed Dashboard</h2>
 				<p className="text-sm text-gray-600 mt-1">A short confidential screen to understand how you're feeling. Your responses are private.</p>
 			</div>
 
@@ -132,34 +170,31 @@ export default function UnemployeeForm({ onSubmit }: { onSubmit?: (data: any) =>
 					</div>
 				</div>
 
-				<div className="mb-4">
-					<label className="font-semibold">How well do the scenarios match you?</label>
-					<div className="mt-2 space-y-2">
-						{scenarios.map((s, i) => (
-							<div key={s.id} className="flex items-center justify-between bg-gray-50 p-3 rounded">
-								<div className="w-3/4 text-sm text-gray-700">{s.text}</div>
-								<select value={scenarioAnswers[i]} onChange={(e) => setScenario(i, Number(e.target.value))} className="p-2 border border-gray-200 rounded-lg bg-white">
-									<option value={0}>Not like me</option>
-									<option value={1}>A little like me</option>
-									<option value={2}>A lot like me</option>
-								</select>
-							</div>
-						))}
-					</div>
-				</div>
+				
 
-				<div className="mb-4">
-					<label className="font-semibold">Anything you'd like to add (optional)</label>
-					<textarea value={notes} onChange={(e) => setNotes(e.target.value)} className="w-full p-2 border rounded mt-2" rows={3} />
-				</div>
-
+			
 				<div className="flex items-center gap-3">
-					<button type="submit" className="px-4 py-2 bg-[#10B981] text-white rounded-lg font-medium">Submit</button>
+					<button 
+						type="submit" 
+						disabled={isSubmitting}
+						className={`px-4 py-2 rounded-lg font-medium ${
+							isSubmitting 
+								? "bg-gray-400 text-gray-200 cursor-not-allowed" 
+								: "bg-[#10B981] text-white hover:bg-green-600"
+						}`}
+					>
+						{isSubmitting ? "Submitting..." : "Submit"}
+					</button>
 					{result && <div className="text-sm text-[#065F46]">{result}</div>}
 				</div>
+				{submitError && (
+					<div className="text-red-600 bg-red-50 p-3 rounded-lg text-sm">
+						Error: {submitError}
+					</div>
+				)}
 
 				<div className="mt-4 text-xs text-red-600">
-					If you indicated any thoughts of self-harm, please seek immediate help from local emergency services or your nearest crisis hotline.
+			If you indicated any thoughts of self-harm, please seek immediate help from local emergency services or your nearest crisis hotline.
 				</div>
 			</form>
 		</section>

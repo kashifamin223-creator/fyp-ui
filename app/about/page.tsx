@@ -9,16 +9,30 @@ export default function AboutPage() {
       
       <main className="flex-grow bg-gradient-to-br from-blue-50 to-green-50">
         <div className="max-w-7xl mx-auto p-6">
-          {/* Hero Section */}
-          <header className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-[#064E3B] mb-6">
-              About Mental Healthcare Therapy
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Providing comprehensive mental health support for children, students, and professionals 
-              through accessible, compassionate, and evidence-based therapeutic resources.
-            </p>
-          </header>
+          
+        {/* Hero Section */}
+        <section 
+  className="relative py-20 px-6"
+  style={{
+    backgroundImage: "url('/WorldMentalHealthDay.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center"
+  }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  {/* Content */}
+  <div className="relative max-w-7xl mx-auto text-center">
+    <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+       About Mental Healthcare Therapy
+    </h1>
+
+    <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-200">
+              World Mental Health Day 10th October 2026: "Mental Health is a Human Right" - Join us in raising awareness and advocating for accessible, compassionate mental health care for all.
+    </p>
+  </div>
+</section>
 
           {/* Mission Section */}
           <section className="mb-16">
@@ -147,17 +161,17 @@ export default function AboutPage() {
                 <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-3xl">👩‍⚕️</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Dr. Sarah Johnson</h3>
-                <p className="text-gray-600 mb-2">Clinical Director</p>
+                <h3 className="text-xl font-semibold mb-2">Dr. Nabeel Ibad</h3>
+                <p className="text-gray-600 mb-2">Neuro psycholigist Sheikhzaid Hospital</p>
                 <p className="text-sm text-gray-500">
-                  15+ years experience in child psychology and trauma recovery
+                  10+ years experience in child psychology and trauma recovery
                 </p>
               </div>
               <div className="bg-white rounded-lg shadow-md p-6 text-center">
                 <div className="w-24 h-24 bg-green-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-3xl">👨‍⚕️</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Dr. Michael Chen</h3>
+                <h3 className="text-xl font-semibold mb-2">Dr. Subhan Ahmed</h3>
                 <p className="text-gray-600 mb-2">Lead Therapist</p>
                 <p className="text-sm text-gray-500">
                   Specialist in adolescent mental health and family therapy
@@ -167,8 +181,8 @@ export default function AboutPage() {
                 <div className="w-24 h-24 bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                   <span className="text-3xl">👩‍⚕️</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Dr. Emily Rodriguez</h3>
-                <p className="text-gray-600 mb-2">Crisis Intervention Specialist</p>
+                <h3 className="text-xl font-semibold mb-2">Dr. Mubashara Tayyaba</h3>
+                <p className="text-gray-600 mb-2">Cognitive Behavioral Therapist</p>
                 <p className="text-sm text-gray-500">
                   Expert in emergency mental health and trauma-informed care
                 </p>
@@ -201,53 +215,8 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Contact Section */}
-          <section className="mb-16">
-            <div className="bg-white rounded-xl shadow-lg p-8">
-              <h2 className="text-3xl font-bold text-[#064E3B] mb-6 text-center">Get in Touch</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="text-3xl mb-3">📞</div>
-                  <h3 className="text-lg font-semibold mb-2">Phone Support</h3>
-                  <p className="text-gray-600">Main: 1-800-MENTAL</p>
-                  <p className="text-gray-600">Emergency: 911</p>
-                  <p className="text-gray-600">Child Abuse: 1-800-4-A-CHILD</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl mb-3">✉️</div>
-                  <h3 className="text-lg font-semibold mb-2">Email</h3>
-                  <p className="text-gray-600">support@mentalhealth.com</p>
-                  <p className="text-gray-600">info@mentalhealth.com</p>
-                  <p className="text-gray-600">emergency@mentalhealth.com</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl mb-3">📍</div>
-                  <h3 className="text-lg font-semibold mb-2">Locations</h3>
-                  <p className="text-gray-600">Main Office</p>
-                  <p className="text-gray-600">123 Wellness Street</p>
-                  <p className="text-gray-600">Online Support Available</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="text-center">
-            <div className="bg-[#064E3B] rounded-xl p-8 text-white">
-              <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
-              <p className="text-xl mb-6">
-                Take the first step towards better mental health today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-3 bg-white text-[#064E3B] rounded-lg font-semibold hover:bg-gray-100 transition">
-                  Get Started
-                </button>
-                <button className="px-8 py-3 bg-transparent border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-[#064E3B] transition">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </section>
+          
+          
         </div>
       </main>
     </div>

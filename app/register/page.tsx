@@ -77,7 +77,7 @@ export default function RegisterPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<PatientRegistration> = {};
+    const newErrors: FormErrors = {};
 
     // Required fields validation
     if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
@@ -87,7 +87,12 @@ export default function RegisterPage() {
     if (!formData.dateOfBirth) newErrors.dateOfBirth = "Date of birth is required";
     if (!formData.primaryConcern) newErrors.primaryConcern = "Please select a primary concern";
     if (!formData.therapyType) newErrors.therapyType = "Please select therapy type";
-   
+    if (!formData.agreeToTerms) {
+      newErrors.agreeToTerms = "You must agree to the terms and conditions";
+    }
+    if (!formData.consentToTreatment) {
+      newErrors.consentToTreatment = "You must consent to treatment";
+    }
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -101,13 +106,14 @@ export default function RegisterPage() {
       newErrors.phone = "Please enter a valid 10-digit phone number";
     }
 
+    setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleInputChange = (field: keyof PatientRegistration, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
-    if (errors[field as keyof PatientRegistration]) {
+    if (errors[field as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [field]: undefined }));
     }
   };
@@ -307,326 +313,11 @@ export default function RegisterPage() {
                       theme === 'dark' 
                         ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
                         : 'border-gray-300 focus:ring-blue-400'
-                      }`}
+                    }`}
                   />
                   {errors.dateOfBirth && (
                     <p className="text-red-500 text-sm mt-1">{errors.dateOfBirth}</p>
                   )}
-                </div>
-              </div>
-
-              {/* Address Information */}
-              <div className={`p-6 rounded-lg ${
-                theme === 'dark' ? 'bg-gray-700' : 'bg-gray-50'
-              }`}>
-                <h2 className={`text-xl font-semibold mb-4 ${
-                  theme === 'dark' ? 'text-gray-100' : 'text-gray-800'
-                }`}>
-                  Address Information
-                </h2>
-                
-                <div className="space-y-4">
-                  <div>
-                    <label className={`block font-medium mb-2 ${
-                      theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                    }`}>
-                      Street Address
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.address}
-                      onChange={(e) => handleInputChange('address', e.target.value)}
-                      className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                        theme === 'dark' 
-                          ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                          : 'border-gray-300 focus:ring-blue-400'
-                      }`}
-                      placeholder="123 Main Street"
-                    />
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                      <label className={`block font-medium mb-2 ${
-                        theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                      }`}>
-                        City
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.city}
-                        onChange={(e) => handleInputChange('city', e.target.value)}
-                        className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                          theme === 'dark' 
-                            ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                            : 'border-gray-300 focus:ring-blue-400'
-                        }`}
-                        placeholder="New York"
-                      />
-                    </div>
-
-                    <div>
-                      <label className={`block font-medium mb-2 ${
-                        theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                      }`}>
-                        State
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.state}
-                        onChange={(e) => handleInputChange('state', e.target.value)}
-                        className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                          theme === 'dark' 
-                            ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                            : 'border-gray-300 focus:ring-blue-400'
-                        }`}
-                        placeholder="NY"
-                      />
-                    </div>
-
-                    <div>
-                      <label className={`block font-medium mb-2 ${
-                        theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                      }`}>
-                        ZIP Code
-                      </label>
-                      <input
-                        type="text"
-                        value={formData.zipCode}
-                        onChange={(e) => handleInputChange('zipCode', e.target.value)}
-                        className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                          theme === 'dark' 
-                            ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                            : 'border-gray-300 focus:ring-blue-400'
-                        }`}
-                        placeholder="10001"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Emergency Contact */}
-              <div className={`p-6 rounded-lg ${
-                theme === 'dark' ? 'bg-gray-700' : 'bg-gray-50'
-              }`}>
-                <h2 className={`text-xl font-semibold mb-4 ${
-                  theme === 'dark' ? 'text-gray-100' : 'text-gray-800'
-                }`}>
-                  Emergency Contact
-                </h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className={`block font-medium mb-2 ${
-                      theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                    }`}>
-                      Emergency Contact Name
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.emergencyContact}
-                      onChange={(e) => handleInputChange('emergencyContact', e.target.value)}
-                      className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                        theme === 'dark' 
-                          ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                          : 'border-gray-300 focus:ring-blue-400'
-                      }`}
-                      placeholder="Jane Doe"
-                    />
-                  </div>
-
-                  <div>
-                    <label className={`block font-medium mb-2 ${
-                      theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                    }`}>
-                      Emergency Contact Phone
-                    </label>
-                    <input
-                      type="tel"
-                      value={formData.emergencyPhone}
-                      onChange={(e) => handleInputChange('emergencyPhone', e.target.value)}
-                      className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                        theme === 'dark' 
-                          ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                          : 'border-gray-300 focus:ring-blue-400'
-                      }`}
-                      placeholder="(555) 987-6543"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Insurance Information */}
-              <div className={`p-6 rounded-lg ${
-                theme === 'dark' ? 'bg-gray-700' : 'bg-gray-50'
-              }`}>
-                <h2 className={`text-xl font-semibold mb-4 ${
-                  theme === 'dark' ? 'text-gray-100' : 'text-gray-800'
-                }`}>
-                  Insurance Information
-                </h2>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className={`block font-medium mb-2 ${
-                      theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                    }`}>
-                      Insurance Provider
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.insuranceProvider}
-                      onChange={(e) => handleInputChange('insuranceProvider', e.target.value)}
-                      className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                        theme === 'dark' 
-                          ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                          : 'border-gray-300 focus:ring-blue-400'
-                      }`}
-                      placeholder="Blue Cross Blue Shield"
-                    />
-                  </div>
-
-                  <div>
-                    <label className={`block font-medium mb-2 ${
-                      theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                    }`}>
-                      Policy Number
-                    </label>
-                    <input
-                      type="text"
-                      value={formData.policyNumber}
-                      onChange={(e) => handleInputChange('policyNumber', e.target.value)}
-                      className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                        theme === 'dark' 
-                          ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                          : 'border-gray-300 focus:ring-blue-400'
-                      }`}
-                      placeholder="ABC123456"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Therapy Preferences */}
-              <div className={`p-6 rounded-lg ${
-                theme === 'dark' ? 'bg-gray-700' : 'bg-gray-50'
-              }`}>
-                <h2 className={`text-xl font-semibold mb-4 ${
-                  theme === 'dark' ? 'text-gray-100' : 'text-gray-800'
-                }`}>
-                  Therapy Preferences
-                </h2>
-                
-                <div className="space-y-4">
-                  <div>
-                    <label className={`block font-medium mb-2 ${
-                      theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                    }`}>
-                      Primary Concern *
-                    </label>
-                    <select
-                      required
-                      value={formData.primaryConcern}
-                      onChange={(e) => handleInputChange('primaryConcern', e.target.value)}
-                      className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                        theme === 'dark' 
-                          ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                          : 'border-gray-300 focus:ring-blue-400'
-                      }`}
-                    >
-                      <option value="">Select your primary concern</option>
-                      <option value="anxiety">Anxiety</option>
-                      <option value="depression">Depression</option>
-                      <option value="trauma">Trauma/PTSD</option>
-                      <option value="stress">Stress Management</option>
-                      <option value="relationship">Relationship Issues</option>
-                      <option value="self-esteem">Self-Esteem</option>
-                      <option value="grief">Grief/Loss</option>
-                      <option value="other">Other</option>
-                    </select>
-                    {errors.primaryConcern && (
-                      <p className="text-red-500 text-sm mt-1">{errors.primaryConcern}</p>
-                    )}
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className={`block font-medium mb-2 ${
-                        theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                      }`}>
-                        Therapy Type *
-                      </label>
-                      <select
-                        required
-                        value={formData.therapyType}
-                        onChange={(e) => handleInputChange('therapyType', e.target.value)}
-                        className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                          theme === 'dark' 
-                            ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                            : 'border-gray-300 focus:ring-blue-400'
-                        }`}
-                      >
-                        <option value="">Select therapy type</option>
-                        <option value="individual">Individual Therapy</option>
-                        <option value="group">Group Therapy</option>
-                        <option value="family">Family Therapy</option>
-                        <option value="couples">Couples Therapy</option>
-                        <option value="online">Online Therapy</option>
-                        <option value="in-person">In-Person Therapy</option>
-                      </select>
-                      {errors.therapyType && (
-                        <p className="text-red-500 text-sm mt-1">{errors.therapyType}</p>
-                      )}
-                    </div>
-
-                    <div>
-                      <label className={`block font-medium mb-2 ${
-                        theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                      }`}>
-                        Preferred Time
-                      </label>
-                      <select
-                        value={formData.preferredTime}
-                        onChange={(e) => handleInputChange('preferredTime', e.target.value)}
-                        className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                          theme === 'dark' 
-                            ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                            : 'border-gray-300 focus:ring-blue-400'
-                        }`}
-                      >
-                        <option value="">Select preferred time</option>
-                        <option value="morning">Morning (9AM - 12PM)</option>
-                        <option value="afternoon">Afternoon (12PM - 5PM)</option>
-                        <option value="evening">Evening (5PM - 8PM)</option>
-                        <option value="weekend">Weekend</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className={`block font-medium mb-2 ${
-                      theme === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                    }`}>
-                      Preferred Language
-                    </label>
-                    <select
-                      value={formData.preferredLanguage}
-                      onChange={(e) => handleInputChange('preferredLanguage', e.target.value)}
-                      className={`w-full border px-4 py-2 rounded-lg focus:outline-none focus:ring-2 ${
-                        theme === 'dark' 
-                          ? 'bg-gray-600 border-gray-500 text-gray-100 focus:ring-blue-500' 
-                          : 'border-gray-300 focus:ring-blue-400'
-                        }`}
-                    >
-                      <option value="">Select preferred language</option>
-                      <option value="english">English</option>
-                      <option value="spanish">Spanish</option>
-                      <option value="french">French</option>
-                      <option value="mandarin">Mandarin</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
                 </div>
               </div>
 

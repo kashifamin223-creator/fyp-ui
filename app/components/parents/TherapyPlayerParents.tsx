@@ -19,7 +19,7 @@ const RECOMMENDED_VIDEOS = [
   { id: "WarhwKYtFnQ", title: "Help! My Kid is Stressing Me Out", person: "Parenting Support" },
   { id: "2CRL05ZWAbo", title: "A Parents' Guide to Stress: Using CBT Skills", person: "CBT for Parents" },
   { id: "qp0HIF3SfI4", title: "Brené Brown — The Power of Vulnerability", person: "Brené Brown" },
-  { id: "2OEL4P1Rz04", title: "Simon Sinek — Why Good Leaders Make You Feel Safe", person: "Simon Sinek" },
+  { id: "lmyZMtPVodo", title: "Simon Sinek — Why Good Leaders Make You Feel Safe", person: "Simon Sinek" },
   { id: "lmyZMtPVodo", title: "Simon Sinek — How Great Leaders Inspire Action", person: "Simon Sinek" },
   { id: "PQAqVbAQVtM", title: "Brené Brown & Simon Sinek — Leadership & Connection", person: "Brené Brown & Simon Sinek" },
 ];

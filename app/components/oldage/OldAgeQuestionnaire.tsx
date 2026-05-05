@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { apiService, handleApiResponse, UserSession } from "../../services/api";
 
 const QUESTIONS: string[] = [
   "I feel connected to family and friends.",
@@ -29,6 +30,8 @@ export default function OldAgeQuestionnaire({ onSubmit, onRecommend }: Props) {
   const [agreeAnswers, setAgreeAnswers] = useState<number[]>(Array(QUESTIONS.length).fill(-1));
   const [submitted, setSubmitted] = useState(false);
   const [stats, setStats] = useState<any | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string>('');
 
   function toggleTreatment(value: string) {
     setTreatment((prev) => (prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]));
@@ -39,6 +42,49 @@ export default function OldAgeQuestionnaire({ onSubmit, onRecommend }: Props) {
     copy[index] = value;
     setAgreeAnswers(copy);
   }
+
+  const submitForm = async () => {
+    setIsSubmitting(true);
+    setSubmitError('');
+    
+    try {
+      // Get current user ID from session
+      const user = UserSession.getUser();
+      const userId = user?.id || 0;
+      
+      const formData = {
+        id: 0,
+        userid: userId,
+        age: parseInt(age) || 0,
+        gender: gender || "string",
+        living: livingSituation || "string",
+        diagnosed: diagnosed === "yes",
+        support: treatment.join(", ") || "string",
+        q1: agreeAnswers[0] === 1,
+        q2: agreeAnswers[1] === 1,
+        q3: agreeAnswers[2] === 1,
+        q4: agreeAnswers[3] === 1,
+        q5: agreeAnswers[4] === 1,
+        q6: agreeAnswers[5] === 1,
+        q7: agreeAnswers[6] === 1,
+        q8: agreeAnswers[7] === 1,
+        q9: agreeAnswers[8] === 1,
+      };
+
+      const success = handleApiResponse(
+        await apiService.submitOldForm(formData),
+        (data) => {
+          console.log("Old form submitted successfully:", data);
+        },
+        (error) => {
+          console.error("Old form submission failed:", error);
+          setSubmitError(error || 'Failed to submit form');
+        }
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -86,6 +132,9 @@ export default function OldAgeQuestionnaire({ onSubmit, onRecommend }: Props) {
     setStats({ agreeSum, agreePercent, mean, std, outlook, stressLevel, answeredCount });
     onSubmit?.(payload);
 
+    // Submit form to API
+    submitForm();
+
     // Stress reduction videos for older adults
     let recommendedId: string | null = null;
     if (stressLevel === "High") {
@@ -101,7 +150,7 @@ export default function OldAgeQuestionnaire({ onSubmit, onRecommend }: Props) {
   return (
     <section className="w-full bg-white p-8 rounded-xl shadow-lg">
       <div className="mb-4">
-        <h2 className="text-2xl font-extrabold text-[#064E3B]">Old Age — Wellbeing & Life Satisfaction Check</h2>
+        <h2 className="text-2xl font-extrabold text-[#064E3B]">Old Age Dashboard</h2>
         <p className="text-sm text-gray-600 mt-1">
           A short confidential screen to assess your wellbeing and life satisfaction. Your responses are private.
         </p>
@@ -201,10 +250,23 @@ export default function OldAgeQuestionnaire({ onSubmit, onRecommend }: Props) {
         </div>
 
         <div className="flex items-center gap-3">
-          <button type="submit" className="px-4 py-2 bg-[#10B981] text-white rounded-lg font-medium">
-            Submit
+          <button 
+            type="submit" 
+            disabled={isSubmitting}
+            className={`px-4 py-2 rounded-lg font-medium ${
+              isSubmitting 
+                ? "bg-gray-400 text-gray-200 cursor-not-allowed" 
+                : "bg-[#10B981] text-white hover:bg-green-600"
+            }`}
+          >
+            {isSubmitting ? "Submitting..." : "Submit"}
           </button>
         </div>
+        {submitError && (
+          <div className="text-red-600 bg-red-50 p-3 rounded-lg text-sm">
+            Error: {submitError}
+          </div>
+        )}
         {stats && (
           <div className="mt-4 p-3 border rounded bg-gray-50">
             <h4 className="font-semibold">Quick analysis</h4>

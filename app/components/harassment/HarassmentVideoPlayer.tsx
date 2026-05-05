@@ -17,74 +17,66 @@ const harassmentVideos: Video[] = [
     id: "1",
     title: "Standing Up to Bullies",
     description: "Learn how to be brave and stand up for yourself and others",
-    duration: "6:45",
+    duration: "2:03",
     category: "Empowerment",
     thumbnail: "🛡️",
-    videoUrl: "https://www.youtube.com/embed/example1"
+    videoUrl: "https://www.youtube.com/watch?v=HtJMj5gWYkg"
   },
   {
     id: "2", 
     title: "Building Self-Confidence",
     description: "Discover your inner strength and believe in yourself",
-    duration: "8:20",
+    duration: "6:29",
     category: "Confidence",
     thumbnail: "💪",
-    videoUrl: "https://www.youtube.com/embed/example2"
+    videoUrl: "https://www.youtube.com/watch?v=pdjaxS4ME2A"
   },
   {
     id: "3",
     title: "Finding Your Voice",
     description: "Learn how to speak up and express yourself clearly",
-    duration: "7:15",
+    duration: "1:17",
     category: "Communication",
     thumbnail: "🗣️",
-    videoUrl: "https://www.youtube.com/embed/example3"
+    videoUrl: "https://www.youtube.com/watch?v=sr5iRj9TMlE"
   },
   {
     id: "4",
     title: "Making Good Friends",
     description: "How to build healthy friendships and avoid toxic ones",
-    duration: "9:30",
+    duration: "5:02",
     category: "Friendship",
     thumbnail: "🤝",
-    videoUrl: "https://www.youtube.com/embed/example4"
+    videoUrl: "https://www.youtube.com/watch?v=4ai7ckER2os"
   },
   {
     id: "5",
     title: "Online Safety Tips",
     description: "Stay safe on the internet and handle cyberbullying",
-    duration: "5:50",
+    duration: "4:45",
     category: "Digital Safety",
     thumbnail: "📱",
-    videoUrl: "https://www.youtube.com/embed/example5"
+    videoUrl: "https://www.youtube.com/watch?v=CqH2QYt6oOc"
   },
   {
     id: "6",
     title: "Talking to Adults",
     description: "How to ask for help from trusted adults",
-    duration: "6:00",
+    duration: "1:21",
     category: "Support",
     thumbnail: "👨‍👩‍👧‍👦",
-    videoUrl: "https://www.youtube.com/embed/example6"
+    videoUrl: "https://www.youtube.com/watch?v=ufzOhCAVeyM&list=PLlqY1ajT56E5oQliam29ar_aGC54gaxia"
   },
   {
     id: "7",
     title: "Managing Your Feelings",
     description: "Healthy ways to deal with anger and sadness",
-    duration: "7:45",
+    duration: "5:29",
     category: "Emotional Health",
     thumbnail: "💭",
-    videoUrl: "https://www.youtube.com/embed/example7"
+    videoUrl: "https://www.youtube.com/watch?v=Vs-MyQgfH3A"
   },
-  {
-    id: "8",
-    title: "Being an Upstander",
-    description: "How to help others who are being bullied",
-    duration: "5:30",
-    category: "Leadership",
-    thumbnail: "🦸",
-    videoUrl: "https://www.youtube.com/embed/example8"
-  }
+  
 ];
 
 export default function HarassmentVideoPlayer() {
@@ -101,6 +93,27 @@ export default function HarassmentVideoPlayer() {
     return harassmentVideos.slice(0, 4);
   };
 
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+    const filtered = category === "All" 
+      ? harassmentVideos 
+      : harassmentVideos.filter(video => video.category === category);
+    if (filtered.length > 0) {
+      setSelectedVideo(filtered[0]);
+    }
+  };
+
+  const getEmbedUrl = (url: string) => {
+    if (url.includes('youtube.com/watch?v=')) {
+      const videoId = url.split('v=')[1].split('&')[0];
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+    }
+    if (url.includes('youtube.com/embed/')) {
+      return `${url}?autoplay=1&mute=1`;
+    }
+    return url;
+  };
+
   if (selectedVideo) {
     return (
       <div>
@@ -113,7 +126,7 @@ export default function HarassmentVideoPlayer() {
         
         <div className="bg-black rounded-lg overflow-hidden mb-4">
           <iframe
-            src={selectedVideo.videoUrl}
+            src={getEmbedUrl(selectedVideo.videoUrl)}
             title={selectedVideo.title}
             className="w-full h-64"
             frameBorder="0"
@@ -154,7 +167,7 @@ export default function HarassmentVideoPlayer() {
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategoryClick(category)}
               className={`px-3 py-1 rounded-full text-sm transition ${
                 selectedCategory === category
                   ? "bg-red-600 text-white"
@@ -235,9 +248,9 @@ export default function HarassmentVideoPlayer() {
         <h4 className="font-semibold mb-2 text-blue-800">🆘 Need Help Now?</h4>
         <ul className="text-sm space-y-1 text-blue-700">
           <li>• Talk to a parent, teacher, or school counselor</li>
-          <li>• Call 1-800-STOP-BULLY for immediate help</li>
-          <li>• Text "HELLO" to 741741 for support</li>
-          <li>• You are not alone - help is available</li>
+          <li>• Call 1121 for immediate help</li>
+          <li>• 0800-89457 for support</li>
+          <li>• 24/7 help is available</li>
         </ul>
       </div>
     </div>

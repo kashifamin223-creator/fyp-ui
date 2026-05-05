@@ -17,55 +17,55 @@ const traumaVideos: Video[] = [
     id: "1",
     title: "Deep Breathing for Kids",
     description: "Learn simple breathing exercises to calm your mind and body",
-    duration: "5:30",
+    duration: "4:05",
     category: "Calming",
     thumbnail: "🫁",
-    videoUrl: "https://www.youtube.com/embed/qG-AP8xV6QI"
+    videoUrl: "https://www.youtube.com/watch?v=RiMb2Bw4Ae8"
   },
   {
     id: "2", 
     title: "Story Time: The Brave Little Bear",
     description: "A comforting story about being brave when you feel scared",
-    duration: "8:15",
+    duration: "2:51",
     category: "Stories",
     thumbnail: "🐻",
-    videoUrl: "https://www.youtube.com/embed/example1"
+    videoUrl: "https://www.youtube.com/watch?v=7Z8LygpjBOc"
   },
   {
     id: "3",
     title: "Mindful Moments for Children",
     description: "Gentle exercises to help you feel peaceful and safe",
-    duration: "6:45",
+    duration: "4:02",
     category: "Mindfulness",
     thumbnail: "🧘",
-    videoUrl: "https://www.youtube.com/embed/example2"
+    videoUrl: "https://www.youtube.com/watch?v=UEuFi9PxKuo"
   },
   {
     id: "4",
     title: "Drawing Your Feelings",
     description: "Learn how to express your emotions through art",
-    duration: "7:20",
+    duration: "3:46",
     category: "Creative",
     thumbnail: "🎨",
-    videoUrl: "https://www.youtube.com/embed/example3"
+    videoUrl: "https://www.youtube.com/watch?v=IIbBI-BT9c4"
   },
   {
     id: "5",
     title: "Safe Place Visualization",
     description: "Create a special safe place in your imagination",
-    duration: "10:00",
+    duration: "03:03",
     category: "Relaxation",
     thumbnail: "🏰",
-    videoUrl: "https://www.youtube.com/embed/example4"
+    videoUrl: "Vhttps://www.youtube.com/watch?v=miU4pBZ0hXQ"
   },
   {
     id: "6",
     title: "Happy Movement Dance",
     description: "Fun movements to help your body feel good and happy",
-    duration: "4:30",
+    duration: "3:38",
     category: "Movement",
     thumbnail: "💃",
-    videoUrl: "https://www.youtube.com/embed/example5"
+    videoUrl: "https://www.youtube.com/watch?v=dUXk8Nc5qQ8"
   }
 ];
 
@@ -83,6 +83,27 @@ export default function TraumaVideoPlayer() {
     return traumaVideos.slice(0, 3);
   };
 
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+    const filtered = category === "All" 
+      ? traumaVideos 
+      : traumaVideos.filter(video => video.category === category);
+    if (filtered.length > 0) {
+      setSelectedVideo(filtered[0]);
+    }
+  };
+
+  const getEmbedUrl = (url: string) => {
+    if (url.includes('youtube.com/watch?v=')) {
+      const videoId = url.split('v=')[1].split('&')[0];
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+    }
+    if (url.includes('youtube.com/embed/')) {
+      return `${url}?autoplay=1&mute=1`;
+    }
+    return url;
+  };
+
   if (selectedVideo) {
     return (
       <div>
@@ -95,7 +116,7 @@ export default function TraumaVideoPlayer() {
         
         <div className="bg-black rounded-lg overflow-hidden mb-4">
           <iframe
-            src={selectedVideo.videoUrl}
+            src={getEmbedUrl(selectedVideo.videoUrl)}
             title={selectedVideo.title}
             className="w-full h-64"
             frameBorder="0"
@@ -136,7 +157,7 @@ export default function TraumaVideoPlayer() {
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategoryClick(category)}
               className={`px-3 py-1 rounded-full text-sm transition ${
                 selectedCategory === category
                   ? "bg-blue-600 text-white"

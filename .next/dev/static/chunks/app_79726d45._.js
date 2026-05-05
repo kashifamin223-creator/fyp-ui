@@ -7,18 +7,53 @@ __turbopack_context__.s([
     ()=>Logo
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/components/ThemeContext.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
+;
+;
 function Logo() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "text-2xl font-bold text-blue-600",
-        children: "Mental Healthcare Therapy"
-    }, void 0, false, {
+    _s();
+    const { theme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"])();
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+        href: "/home",
+        className: "flex items-center space-x-3 hover:opacity-80 transition-opacity",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                src: "/MentalHealthTherapyLogo.png",
+                alt: "Mental Healthcare Therapy Logo",
+                width: 40,
+                height: 40,
+                className: "rounded-lg"
+            }, void 0, false, {
+                fileName: "[project]/app/components/Home/Logo.tsx",
+                lineNumber: 12,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: `text-2xl font-bold ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`,
+                children: "Mental Healthcare Therapy"
+            }, void 0, false, {
+                fileName: "[project]/app/components/Home/Logo.tsx",
+                lineNumber: 19,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/app/components/Home/Logo.tsx",
-        lineNumber: 5,
+        lineNumber: 11,
         columnNumber: 5
     }, this);
 }
+_s(Logo, "JkSxfi8+JQlqgIgDOc3wQN+nVIw=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"]
+    ];
+});
 _c = Logo;
 var _c;
 __turbopack_context__.k.register(_c, "Logo");
@@ -35,20 +70,30 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/components/ThemeContext.tsx [app-client] (ecmascript)");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 function NavItem({ label, href }) {
+    _s();
+    const { theme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"])();
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         href: href,
-        className: "text-gray-700 hover:text-blue-600 transition font-medium",
+        className: `transition font-medium ${theme === 'dark' ? 'text-gray-300 hover:text-gray-100' : 'text-gray-700 hover:text-blue-600'}`,
         children: label
     }, void 0, false, {
         fileName: "[project]/app/components/Home/NavItem.tsx",
-        lineNumber: 12,
+        lineNumber: 15,
         columnNumber: 5
     }, this);
 }
+_s(NavItem, "JkSxfi8+JQlqgIgDOc3wQN+nVIw=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"]
+    ];
+});
 _c = NavItem;
 var _c;
 __turbopack_context__.k.register(_c, "NavItem");
@@ -68,9 +113,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Home$2f
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Home$2f$NavItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/components/Home/NavItem.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/components/ThemeContext.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -84,21 +131,20 @@ const dropdownData = {
         {
             label: "Graduate / Bachelor's",
             href: "/student/graduate"
-        },
-        , 
+        }
     ],
     children: [
         {
-            label: "Trauma",
-            href: "/children/trauma"
+            label: "Trauma Support",
+            href: "/trauma-children"
         },
         {
-            label: "Harassment",
-            href: "/children/harassment"
+            label: "Harassment Support",
+            href: "/harassment"
         },
         {
-            label: "Child abuse",
-            href: "/children/abuse"
+            label: "Child Abuse Support",
+            href: "/child-abuse"
         }
     ],
     professionals: [
@@ -124,6 +170,7 @@ function Navbar() {
     _s();
     const [openDropdown, setOpenDropdown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     const navRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const { theme, toggleTheme } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"])();
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Navbar.useEffect": ()=>{
             function handleClickOutside(event) {
@@ -142,51 +189,51 @@ function Navbar() {
     };
     const renderDropdown = (type)=>{
         return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "absolute top-10 left-0 bg-white text-[#065F46] shadow-md rounded-lg py-2 w-56 z-50 border border-[#D1FAE5]",
+            className: `absolute top-10 left-0 shadow-md rounded-lg py-2 w-56 z-50 border ${theme === 'dark' ? 'bg-gray-800 text-gray-200 border-gray-700' : 'bg-white text-[#065F46] border-[#D1FAE5]'}`,
             children: dropdownData[type]?.map((link)=>link ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                     href: link.href,
-                    className: "block px-4 py-2 hover:bg-[#D1FAE5] rounded",
+                    className: `block px-4 py-2 rounded ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-[#D1FAE5]'}`,
                     children: link.label
                 }, link.href, false, {
                     fileName: "[project]/app/components/Home/Nevbar.tsx",
-                    lineNumber: 51,
+                    lineNumber: 56,
                     columnNumber: 5
                 }, this) : null)
         }, void 0, false, {
             fileName: "[project]/app/components/Home/Nevbar.tsx",
-            lineNumber: 48,
+            lineNumber: 49,
             columnNumber: 7
         }, this);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
         ref: navRef,
-        className: "w-full shadow-md py-4 px-8 bg-[#E6F7F1] flex justify-between items-center relative font-sans",
+        className: `w-full shadow-md py-4 px-8 flex justify-between items-center relative font-sans ${theme === 'dark' ? 'bg-gray-900 text-gray-200' : 'bg-[#E6F7F1] text-[#065F46]'}`,
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Home$2f$Logo$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/components/Home/Nevbar.tsx",
-                lineNumber: 67,
+                lineNumber: 80,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex space-x-6 items-center text-[#065F46]",
+                className: "flex space-x-6 items-center",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "relative",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>toggleDropdown("student"),
-                                className: "font-medium hover:text-[#10B981] transition-colors rounded-md px-2 py-1",
+                                className: `font-medium transition-colors rounded-md px-2 py-1 ${theme === 'dark' ? 'hover:text-gray-300' : 'hover:text-[#10B981]'}`,
                                 children: "Student ▾"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Home/Nevbar.tsx",
-                                lineNumber: 73,
+                                lineNumber: 86,
                                 columnNumber: 11
                             }, this),
                             openDropdown === "student" && renderDropdown("student")
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Home/Nevbar.tsx",
-                        lineNumber: 72,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -194,18 +241,18 @@ function Navbar() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>toggleDropdown("children"),
-                                className: "font-medium hover:text-[#10B981] transition-colors rounded-md px-2 py-1",
+                                className: `font-medium transition-colors rounded-md px-2 py-1 ${theme === 'dark' ? 'hover:text-gray-300' : 'hover:text-[#10B981]'}`,
                                 children: "Children ▾"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Home/Nevbar.tsx",
-                                lineNumber: 84,
+                                lineNumber: 101,
                                 columnNumber: 11
                             }, this),
                             openDropdown === "children" && renderDropdown("children")
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Home/Nevbar.tsx",
-                        lineNumber: 83,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -213,18 +260,26 @@ function Navbar() {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 onClick: ()=>toggleDropdown("professionals"),
-                                className: "font-medium hover:text-[#10B981] transition-colors rounded-md px-2 py-1",
+                                className: `font-medium transition-colors rounded-md px-2 py-1 ${theme === 'dark' ? 'hover:text-gray-300' : 'hover:text-[#10B981]'}`,
                                 children: "Professionals ▾"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Home/Nevbar.tsx",
-                                lineNumber: 95,
+                                lineNumber: 116,
                                 columnNumber: 11
                             }, this),
                             openDropdown === "professionals" && renderDropdown("professionals")
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/Home/Nevbar.tsx",
-                        lineNumber: 94,
+                        lineNumber: 115,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Home$2f$NavItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        label: "VR/AR",
+                        href: "/vrar"
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/Home/Nevbar.tsx",
+                        lineNumber: 130,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Home$2f$NavItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -232,7 +287,7 @@ function Navbar() {
                         href: "/about"
                     }, void 0, false, {
                         fileName: "[project]/app/components/Home/Nevbar.tsx",
-                        lineNumber: 105,
+                        lineNumber: 131,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Home$2f$NavItem$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -240,23 +295,67 @@ function Navbar() {
                         href: "/references"
                     }, void 0, false, {
                         fileName: "[project]/app/components/Home/Nevbar.tsx",
-                        lineNumber: 106,
+                        lineNumber: 132,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        onClick: toggleTheme,
+                        className: `p-2 rounded-lg transition-colors ${theme === 'dark' ? 'bg-gray-800 text-yellow-400 hover:bg-gray-700' : 'bg-white text-gray-700 hover:bg-gray-100'}`,
+                        "aria-label": "Toggle theme",
+                        children: theme === 'dark' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                            className: "w-5 h-5",
+                            fill: "currentColor",
+                            viewBox: "0 0 20 20",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                d: "M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/Home/Nevbar.tsx",
+                                lineNumber: 146,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/Home/Nevbar.tsx",
+                            lineNumber: 145,
+                            columnNumber: 13
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                            className: "w-5 h-5",
+                            fill: "currentColor",
+                            viewBox: "0 0 20 20",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
+                                d: "M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/Home/Nevbar.tsx",
+                                lineNumber: 150,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/Home/Nevbar.tsx",
+                            lineNumber: 149,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/Home/Nevbar.tsx",
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/Home/Nevbar.tsx",
-                lineNumber: 70,
+                lineNumber: 83,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/Home/Nevbar.tsx",
-        lineNumber: 65,
+        lineNumber: 74,
         columnNumber: 5
     }, this);
 }
-_s(Navbar, "bwCYbDpgsay/5BTv+mf/bjTZsyM=");
+_s(Navbar, "7Yzx7BqlSrk61Yv5qFiN/FKAEWo=", false, function() {
+    return [
+        __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$ThemeContext$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTheme"]
+    ];
+});
 _c = Navbar;
 var _c;
 __turbopack_context__.k.register(_c, "Navbar");
@@ -553,34 +652,23 @@ function UnemployeeForm({ onSubmit }) {
     const [diagnosed, setDiagnosed] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [treatment, setTreatment] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const phqItems = [
-        "Little interest or pleasure in doing things",
-        "Feeling down, depressed, or hopeless",
-        "Trouble falling or staying asleep, or sleeping too much",
-        "Feeling tired or having little energy",
-        "Poor appetite or overeating",
-        "Feeling bad about yourself — or that you are a failure",
-        "Trouble concentrating on things",
-        "Moving or speaking so slowly that other people could have noticed",
-        "Thoughts that you would be better off dead or of hurting yourself"
+        "1.Little interest or pleasure in doing things",
+        "2.Feeling down, depressed, or hopeless",
+        "3.Trouble falling or staying asleep, or sleeping too much",
+        "4.Feeling tired or having little energy",
+        "5.Poor appetite or overeating",
+        "6.Feeling bad about yourself — or that you are a failure",
+        "7.Trouble concentrating on things",
+        "8.Moving or speaking so slowly that other people could have noticed",
+        "9.Thoughts that you would be better off dead or of hurting yourself"
     ];
-    const scenarios = [
-        {
-            id: "withdrawal",
-            text: "You've stopped going out with friends and avoid calls because it's too much effort."
-        },
-        {
-            id: "performance",
-            text: "At applications or interviews you find it hard to focus, lose track of what to say, or cancel because of anxiety."
-        },
-        {
-            id: "sleep",
-            text: "You wake several times at night and feel exhausted all day, making tasks difficult."
-        }
-    ];
+    const scenarios = [];
     const [phqAnswers, setPhqAnswers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(Array(phqItems.length).fill(0));
     const [scenarioAnswers, setScenarioAnswers] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(Array(scenarios.length).fill(0));
     const [notes, setNotes] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [result, setResult] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [isSubmitting, setIsSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [submitError, setSubmitError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('');
     function setPhq(index, value) {
         const copy = [
             ...phqAnswers
@@ -640,10 +728,10 @@ function UnemployeeForm({ onSubmit }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         className: "text-2xl font-extrabold text-[#064E3B]",
-                        children: "Wellbeing Check"
+                        children: "Unemployed Dashboard"
                     }, void 0, false, {
                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 76,
+                        lineNumber: 68,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -651,13 +739,13 @@ function UnemployeeForm({ onSubmit }) {
                         children: "A short confidential screen to understand how you're feeling. Your responses are private."
                     }, void 0, false, {
                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 77,
+                        lineNumber: 69,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                lineNumber: 75,
+                lineNumber: 67,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -673,7 +761,7 @@ function UnemployeeForm({ onSubmit }) {
                                 className: "p-3 border border-gray-200 rounded-lg bg-gray-50"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 82,
+                                lineNumber: 74,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -686,41 +774,41 @@ function UnemployeeForm({ onSubmit }) {
                                         children: "Gender"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 84,
+                                        lineNumber: 76,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Male"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 85,
+                                        lineNumber: 77,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Female"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 86,
+                                        lineNumber: 78,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Other"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 87,
+                                        lineNumber: 79,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Prefer not to say"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 80,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 83,
+                                lineNumber: 75,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -733,54 +821,54 @@ function UnemployeeForm({ onSubmit }) {
                                         children: "Employment status"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 91,
+                                        lineNumber: 83,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Employed full-time"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 92,
+                                        lineNumber: 84,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Employed part-time"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 93,
+                                        lineNumber: 85,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Unemployed"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 86,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Student"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 87,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                         children: "Other"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 96,
+                                        lineNumber: 88,
                                         columnNumber: 7
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 90,
+                                lineNumber: 82,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 81,
+                        lineNumber: 73,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -791,7 +879,7 @@ function UnemployeeForm({ onSubmit }) {
                                 children: "Have you ever been diagnosed with a mental health condition?"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 101,
+                                lineNumber: 93,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -807,7 +895,7 @@ function UnemployeeForm({ onSubmit }) {
                                                 onChange: (e)=>setDiagnosed(e.target.value)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 103,
+                                                lineNumber: 95,
                                                 columnNumber: 57
                                             }, this),
                                             " ",
@@ -815,13 +903,13 @@ function UnemployeeForm({ onSubmit }) {
                                                 children: "Yes"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 103,
+                                                lineNumber: 95,
                                                 columnNumber: 156
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 95,
                                         columnNumber: 7
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -834,7 +922,7 @@ function UnemployeeForm({ onSubmit }) {
                                                 onChange: (e)=>setDiagnosed(e.target.value)
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 96,
                                                 columnNumber: 57
                                             }, this),
                                             " ",
@@ -842,13 +930,114 @@ function UnemployeeForm({ onSubmit }) {
                                                 children: "No"
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 96,
                                                 columnNumber: 155
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                        lineNumber: 96,
+                                        columnNumber: 7
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                lineNumber: 94,
+                                columnNumber: 6
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                        lineNumber: 92,
+                        columnNumber: 5
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mb-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                className: "font-semibold text-sm",
+                                children: "Current treatment (choose any)"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                lineNumber: 101,
+                                columnNumber: 6
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mt-2 flex gap-4",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: "inline-flex items-center gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "checkbox",
+                                                onChange: ()=>toggleTreatment("Medication")
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                                lineNumber: 103,
+                                                columnNumber: 57
+                                            }, this),
+                                            " ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "Medication"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                                lineNumber: 103,
+                                                columnNumber: 130
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                        lineNumber: 103,
+                                        columnNumber: 7
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: "inline-flex items-center gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "checkbox",
+                                                onChange: ()=>toggleTreatment("Therapy")
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                                lineNumber: 104,
+                                                columnNumber: 57
+                                            }, this),
+                                            " ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "Therapy"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                                lineNumber: 104,
+                                                columnNumber: 127
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
                                         lineNumber: 104,
+                                        columnNumber: 7
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                        className: "inline-flex items-center gap-2",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "checkbox",
+                                                onChange: ()=>toggleTreatment("None")
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                                lineNumber: 105,
+                                                columnNumber: 57
+                                            }, this),
+                                            " ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "None"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                                lineNumber: 105,
+                                                columnNumber: 124
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
+                                        lineNumber: 105,
                                         columnNumber: 7
                                     }, this)
                                 ]
@@ -867,112 +1056,11 @@ function UnemployeeForm({ onSubmit }) {
                         className: "mb-4",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                className: "font-semibold text-sm",
-                                children: "Current treatment (choose any)"
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 109,
-                                columnNumber: 6
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-2 flex gap-4",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "inline-flex items-center gap-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                type: "checkbox",
-                                                onChange: ()=>toggleTreatment("Medication")
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 111,
-                                                columnNumber: 57
-                                            }, this),
-                                            " ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "Medication"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 111,
-                                                columnNumber: 130
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 111,
-                                        columnNumber: 7
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "inline-flex items-center gap-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                type: "checkbox",
-                                                onChange: ()=>toggleTreatment("Therapy")
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 112,
-                                                columnNumber: 57
-                                            }, this),
-                                            " ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "Therapy"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 112,
-                                                columnNumber: 127
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 112,
-                                        columnNumber: 7
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                        className: "inline-flex items-center gap-2",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                type: "checkbox",
-                                                onChange: ()=>toggleTreatment("None")
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 113,
-                                                columnNumber: 57
-                                            }, this),
-                                            " ",
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "None"
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 113,
-                                                columnNumber: 124
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 113,
-                                        columnNumber: 7
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 110,
-                                columnNumber: 6
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 108,
-                        columnNumber: 5
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-4",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                 className: "font-semibold",
                                 children: "PHQ-like symptom screen (past 2 weeks)"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 118,
+                                lineNumber: 110,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -980,7 +1068,7 @@ function UnemployeeForm({ onSubmit }) {
                                 children: "0=Not at all, 1=Several days, 2=More than half the days, 3=Nearly every day"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 119,
+                                lineNumber: 111,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -993,7 +1081,7 @@ function UnemployeeForm({ onSubmit }) {
                                                 children: text
                                             }, void 0, false, {
                                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 115,
                                                 columnNumber: 9
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1006,7 +1094,7 @@ function UnemployeeForm({ onSubmit }) {
                                                         children: "0"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                        lineNumber: 125,
+                                                        lineNumber: 117,
                                                         columnNumber: 10
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1014,7 +1102,7 @@ function UnemployeeForm({ onSubmit }) {
                                                         children: "1"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 118,
                                                         columnNumber: 10
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1022,7 +1110,7 @@ function UnemployeeForm({ onSubmit }) {
                                                         children: "2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 119,
                                                         columnNumber: 10
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1030,133 +1118,30 @@ function UnemployeeForm({ onSubmit }) {
                                                         children: "3"
                                                     }, void 0, false, {
                                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                        lineNumber: 128,
+                                                        lineNumber: 120,
                                                         columnNumber: 10
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 116,
                                                 columnNumber: 9
                                             }, this)
                                         ]
                                     }, i, true, {
                                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 114,
                                         columnNumber: 8
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 120,
+                                lineNumber: 112,
                                 columnNumber: 6
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 117,
-                        columnNumber: 5
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-4",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                className: "font-semibold",
-                                children: "How well do the scenarios match you?"
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 136,
-                                columnNumber: 6
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "mt-2 space-y-2",
-                                children: scenarios.map((s, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center justify-between bg-gray-50 p-3 rounded",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-3/4 text-sm text-gray-700",
-                                                children: s.text
-                                            }, void 0, false, {
-                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 140,
-                                                columnNumber: 9
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
-                                                value: scenarioAnswers[i],
-                                                onChange: (e)=>setScenario(i, Number(e.target.value)),
-                                                className: "p-2 border border-gray-200 rounded-lg bg-white",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                        value: 0,
-                                                        children: "Not like me"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                        lineNumber: 142,
-                                                        columnNumber: 10
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                        value: 1,
-                                                        children: "A little like me"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                        lineNumber: 143,
-                                                        columnNumber: 10
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                        value: 2,
-                                                        children: "A lot like me"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                        lineNumber: 144,
-                                                        columnNumber: 10
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                                lineNumber: 141,
-                                                columnNumber: 9
-                                            }, this)
-                                        ]
-                                    }, s.id, true, {
-                                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                        lineNumber: 139,
-                                        columnNumber: 8
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 137,
-                                columnNumber: 6
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 135,
-                        columnNumber: 5
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mb-4",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                className: "font-semibold",
-                                children: "Anything you'd like to add (optional)"
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 152,
-                                columnNumber: 6
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                                value: notes,
-                                onChange: (e)=>setNotes(e.target.value),
-                                className: "w-full p-2 border rounded mt-2",
-                                rows: 3
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 153,
-                                columnNumber: 6
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 151,
+                        lineNumber: 109,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1168,7 +1153,7 @@ function UnemployeeForm({ onSubmit }) {
                                 children: "Submit"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 157,
+                                lineNumber: 131,
                                 columnNumber: 6
                             }, this),
                             result && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1176,13 +1161,13 @@ function UnemployeeForm({ onSubmit }) {
                                 children: result
                             }, void 0, false, {
                                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                                lineNumber: 158,
+                                lineNumber: 132,
                                 columnNumber: 17
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 156,
+                        lineNumber: 130,
                         columnNumber: 5
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1190,23 +1175,23 @@ function UnemployeeForm({ onSubmit }) {
                         children: "If you indicated any thoughts of self-harm, please seek immediate help from local emergency services or your nearest crisis hotline."
                     }, void 0, false, {
                         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                        lineNumber: 161,
+                        lineNumber: 135,
                         columnNumber: 5
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-                lineNumber: 80,
+                lineNumber: 72,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/unemployed/unemployeeform.tsx",
-        lineNumber: 74,
+        lineNumber: 66,
         columnNumber: 3
     }, this);
 }
-_s(UnemployeeForm, "cK7W34xCbHQWEnYVWLXgN8t6+mQ=");
+_s(UnemployeeForm, "ZkFAFgYVQKpcXzZsa+REifLl2sU=");
 _c = UnemployeeForm;
 var _c;
 __turbopack_context__.k.register(_c, "UnemployeeForm");
@@ -1219,7 +1204,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 __turbopack_context__.s([
     "default",
-    ()=>TherapyPlayer
+    ()=>TherapyPlayerUnemployed
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
@@ -1228,231 +1213,234 @@ var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 function extractYouTubeId(urlOrId) {
-    // If the user paste only ID, return it. Otherwise try to extract from common URL patterns.
     const idOnly = urlOrId.trim();
     if (!idOnly) return null;
-    const ytRegex = /(?:v=|\/embed\/|youtu\.be\/)([A-Za-z0-9_-]{11})/;
+    const ytRegex = /(?:v=|\/embed\/|youtu\.be\/|\/shorts\/|watch\?v=)([A-Za-z0-9_-]{11})/;
     const match = idOnly.match(ytRegex);
     if (match && match[1]) return match[1];
-    // fallback: if length 11, assume it's an ID
     if (idOnly.length === 11 && /^[A-Za-z0-9_-]+$/.test(idOnly)) return idOnly;
     return null;
 }
-function TherapyPlayer({ onTherapy }) {
+// Career guidance, job search support, and motivation for unemployed individuals
+const RECOMMENDED_VIDEOS = [
+    {
+        id: "DFD7yDR0-ko",
+        title: "Building Confidence in Your Job Search",
+        person: "Career Coaching"
+    },
+    {
+        id: "4FT5RYuifwE",
+        title: "How to Overcome Job Search Anxiety",
+        person: "Mental Wellbeing"
+    },
+    {
+        id: "ivs9S67wdEI",
+        title: "Top Skills Employers Are Looking For",
+        person: "Career Skills"
+    },
+    {
+        id: "O_B1YGIcct0",
+        title: "Staying Positive During Job Transition",
+        person: "Motivation"
+    },
+    {
+        id: "ZMByWenSRdI",
+        title: "Interview Preparation Tips & Tricks",
+        person: "Interview Prep"
+    },
+    {
+        id: "2OEL4P1Rz04",
+        title: "Stress Relief & Relaxation Meditation",
+        person: "Relaxation"
+    },
+    {
+        id: "OVf5c7NthSw",
+        title: "Building Your Professional Network",
+        person: "Networking"
+    },
+    {
+        id: "R3abknwWX7k",
+        title: "Creating an Impressive Resume",
+        person: "Resume Writing"
+    }
+];
+function TherapyPlayerUnemployed({ onTherapy, initialYouTubeId = null }) {
     _s();
-    const videoRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const audioRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
-    const [soundOn, setSoundOn] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    // no persistent inline youtube embed; we'll open fullscreen overlay on demand
-    // a gentle relaxing video suggestion (user can change)
-    const suggestedYouTube = "https://www.youtube.com/watch?v=2OEL4P1Rz04";
-    function toggleSound() {
-        const v = videoRef.current;
-        const a = audioRef.current;
-        if (!v || !a) return;
-        if (soundOn) {
-            a.pause();
-            v.muted = true;
-            setSoundOn(false);
-        } else {
-            v.muted = false;
-            a.currentTime = 0;
-            a.play().catch(()=>{});
-            setSoundOn(true);
-        }
-    }
-    function openFullscreenYouTube(urlOrId) {
-        const id = extractYouTubeId(urlOrId);
-        if (!id) return;
-        // pause background audio if playing
-        const a = audioRef.current;
-        if (a && !a.paused) a.pause();
-        // create overlay container
-        const overlay = document.createElement("div");
-        overlay.style.position = "fixed";
-        overlay.style.top = "0";
-        overlay.style.left = "0";
-        overlay.style.width = "100%";
-        overlay.style.height = "100%";
-        overlay.style.background = "#000";
-        overlay.style.display = "flex";
-        overlay.style.alignItems = "center";
-        overlay.style.justifyContent = "center";
-        overlay.style.zIndex = "9999";
-        const iframe = document.createElement("iframe");
-        iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1&loop=1&playlist=${id}&rel=0`;
-        iframe.allow = "autoplay; encrypted-media; fullscreen";
-        iframe.style.width = "100%";
-        iframe.style.height = "100%";
-        iframe.style.border = "0";
-        // close button
-        const closeBtn = document.createElement("button");
-        closeBtn.textContent = "Close";
-        closeBtn.style.position = "absolute";
-        closeBtn.style.top = "12px";
-        closeBtn.style.right = "12px";
-        closeBtn.style.zIndex = "10000";
-        closeBtn.style.padding = "8px 12px";
-        closeBtn.style.background = "rgba(255,255,255,0.9)";
-        closeBtn.style.border = "none";
-        closeBtn.style.borderRadius = "6px";
-        closeBtn.style.cursor = "pointer";
-        overlay.appendChild(iframe);
-        overlay.appendChild(closeBtn);
-        document.body.appendChild(overlay);
-        function cleanup() {
-            if (document.fullscreenElement) document.exitFullscreen().catch(()=>{});
-            if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
-        }
-        closeBtn.addEventListener("click", ()=>cleanup());
-        document.addEventListener("fullscreenchange", function onFs() {
-            if (!document.fullscreenElement) {
-                cleanup();
-                document.removeEventListener("fullscreenchange", onFs);
+    const [input, setInput] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
+    const [currentId, setCurrentId] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(initialYouTubeId ?? RECOMMENDED_VIDEOS[0].id);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "TherapyPlayerUnemployed.useEffect": ()=>{
+            if (initialYouTubeId) {
+                const extracted = extractYouTubeId(initialYouTubeId);
+                setCurrentId(extracted ?? initialYouTubeId);
             }
-        }, {
-            once: true
-        });
-        // request fullscreen on overlay (must be in user gesture)
-        if (overlay.requestFullscreen) {
-            overlay.requestFullscreen().catch(()=>{});
         }
-    }
-    function useSuggestion() {
-        openFullscreenYouTube(suggestedYouTube);
-        // notify parent that therapy was started (user gesture)
+    }["TherapyPlayerUnemployed.useEffect"], [
+        initialYouTubeId
+    ]);
+    function loadVideo(idOrUrl) {
+        const id = extractYouTubeId(idOrUrl);
+        if (id) setCurrentId(id);
         try {
             onTherapy?.();
         } catch (e) {}
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "w-full bg-white p-6 rounded-xl shadow-lg mt-6",
+        className: "bg-white p-6 rounded-xl shadow-lg",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-start justify-between mb-4",
+                className: "mb-4",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                className: "text-xl font-semibold text-[#064E3B]",
-                                children: "Relaxation Corner"
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                                lineNumber: 124,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-gray-600",
-                                children: "Looping calming media. Paste a YouTube link or use the suggestion below."
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                                lineNumber: 125,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                        className: "text-xl font-semibold text-[#0369A1]",
+                        children: "Career Support & Wellbeing — For Job Seekers"
+                    }, void 0, false, {
                         fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                        lineNumber: 123,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex gap-2",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: toggleSound,
-                                className: "px-3 py-1 rounded bg-[#10B981] text-white text-sm",
-                                children: soundOn ? "Sound On" : "Enable Sound"
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                                lineNumber: 128,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                onClick: useSuggestion,
-                                className: "px-3 py-1 rounded bg-gray-100 text-sm",
-                                children: "Therapy"
-                            }, void 0, false, {
-                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                                lineNumber: 129,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-sm text-gray-600",
+                        children: "Recommended videos for career guidance, job search motivation, and managing stress during your transition."
+                    }, void 0, false, {
                         fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                        lineNumber: 127,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                lineNumber: 122,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "grid grid-cols-1 gap-3",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-full rounded overflow-hidden",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
-                        ref: videoRef,
-                        src: "/media/relax-loop.mp4",
-                        className: "w-full h-48 object-cover bg-black",
-                        playsInline: true,
-                        autoPlay: true,
-                        loop: true,
-                        muted: true
-                    }, void 0, false, {
-                        fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                        lineNumber: 136,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                    lineNumber: 135,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
-                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                lineNumber: 133,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("audio", {
-                ref: audioRef,
-                src: "/media/relax-sound.mp3",
-                loop: true
-            }, void 0, false, {
-                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                lineNumber: 142,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                className: "mt-3 text-xs text-gray-500",
+                className: "mt-4 space-y-3",
                 children: [
-                    "If media does not play, add compatible files to the ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("code", {
-                        children: "/public/media"
+                    currentId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "rounded overflow-hidden",
+                        style: {
+                            aspectRatio: "16/9"
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("iframe", {
+                            src: `https://www.youtube.com/embed/${currentId}?rel=0&modestbranding=1`,
+                            allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                            allowFullScreen: true,
+                            className: "w-full h-full",
+                            title: "Career support video"
+                        }, void 0, false, {
+                            fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                            lineNumber: 63,
+                            columnNumber: 13
+                        }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                        lineNumber: 144,
-                        columnNumber: 101
+                        lineNumber: 62,
+                        columnNumber: 11
                     }, this),
-                    " folder or click the sound button to start audio. YouTube playback may require user interaction."
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex gap-2 items-center",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                value: input,
+                                onChange: (e)=>setInput(e.target.value),
+                                className: "flex-1 px-3 py-2 border border-gray-200 rounded-lg bg-gray-50",
+                                placeholder: "Paste YouTube link or ID"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                                lineNumber: 74,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                onClick: ()=>loadVideo(input),
+                                className: "px-4 py-2 rounded-lg bg-[#0EA5E9] text-white font-medium hover:bg-[#0284C7]",
+                                children: "Load"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                                lineNumber: 80,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                        lineNumber: 73,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "mt-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                className: "font-semibold text-[#0369A1] mb-2",
+                                children: "Career resources for job seekers"
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                                lineNumber: 89,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "grid grid-cols-1 sm:grid-cols-2 gap-2",
+                                children: RECOMMENDED_VIDEOS.map((video, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        onClick: ()=>loadVideo(video.id),
+                                        className: "text-left p-3 rounded-lg border border-gray-200 hover:border-[#0EA5E9] hover:bg-[#E0F2FE] transition-colors",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-xs text-[#0EA5E9] font-medium",
+                                                children: video.person
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                                                lineNumber: 97,
+                                                columnNumber: 17
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "text-sm text-gray-800 truncate",
+                                                title: video.title,
+                                                children: video.title
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                                                lineNumber: 98,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, `${video.id}-${idx}`, true, {
+                                        fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                                        lineNumber: 92,
+                                        columnNumber: 15
+                                    }, this))
+                            }, void 0, false, {
+                                fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                                lineNumber: 90,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                        lineNumber: 88,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                        className: "text-xs text-gray-500",
+                        children: "Click any recommendation to watch. Paste your own YouTube link above for custom content."
+                    }, void 0, false, {
+                        fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
+                        lineNumber: 106,
+                        columnNumber: 9
+                    }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-                lineNumber: 144,
+                lineNumber: 60,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/components/unemployed/therapyplayer.tsx",
-        lineNumber: 121,
+        lineNumber: 52,
         columnNumber: 5
     }, this);
 }
-_s(TherapyPlayer, "mNhEfP284Bt2iF1rU4wSCBnL6A4=");
-_c = TherapyPlayer;
+_s(TherapyPlayerUnemployed, "nI/SVkTQSfrEaZR4eDjmR18p0qA=");
+_c = TherapyPlayerUnemployed;
 var _c;
-__turbopack_context__.k.register(_c, "TherapyPlayer");
+__turbopack_context__.k.register(_c, "TherapyPlayerUnemployed");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
@@ -1540,18 +1528,6 @@ function UnemployedPage() {
             }, void 0, true, {
                 fileName: "[project]/app/student/unemployed/page.tsx",
                 lineNumber: 19,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-                className: "mt-12 p-6 text-center text-[#065F46]",
-                children: [
-                    "© ",
-                    new Date().getFullYear(),
-                    " Healthcare Support. All rights reserved."
-                ]
-            }, void 0, true, {
-                fileName: "[project]/app/student/unemployed/page.tsx",
-                lineNumber: 45,
                 columnNumber: 7
             }, this)
         ]

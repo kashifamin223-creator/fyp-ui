@@ -17,82 +17,82 @@ const childAbuseVideos: Video[] = [
     id: "1",
     title: "You Are Not Alone",
     description: "Understanding that help is available and you deserve to be safe",
-    duration: "7:30",
+    duration: "5:18",
     category: "Support",
     thumbnail: "🤗",
-    videoUrl: "https://www.youtube.com/embed/example1"
+    videoUrl: "https://www.youtube.com/watch?v=gBvkwmfKk1A"
   },
   {
     id: "2", 
     title: "Talking to Trusted Adults",
     description: "How to find and talk to adults who can help keep you safe",
-    duration: "8:15",
+    duration: "2:06",
     category: "Communication",
     thumbnail: "🗣️",
-    videoUrl: "https://www.youtube.com/embed/example2"
+    videoUrl: "https://www.youtube.com/watch?v=YSZ22sx--_4"
   },
   {
     id: "3",
     title: "Building Your Inner Strength",
     description: "Discovering your courage and resilience in difficult times",
-    duration: "9:45",
+    duration: "2:43",
     category: "Empowerment",
     thumbnail: "💪",
-    videoUrl: "https://www.youtube.com/embed/example3"
+    videoUrl: "https://www.youtube.com/watch?v=Cqf9s2KoaSg"
   },
   {
     id: "4",
     title: "Understanding Safe Touch",
     description: "Learning about body safety and personal boundaries",
-    duration: "6:20",
+    duration: "2:07",
     category: "Safety Education",
     thumbnail: "🛡️",
-    videoUrl: "https://www.youtube.com/embed/example4"
+    videoUrl: "https://www.youtube.com/watch?v=zNTUMNKSNwk"
   },
   {
     id: "5",
     title: "Healing Through Art",
     description: "Using drawing and creativity to express feelings and heal",
-    duration: "7:00",
+    duration: "3:02",
     category: "Creative Healing",
     thumbnail: "🎨",
-    videoUrl: "https://www.youtube.com/embed/example5"
+    videoUrl: "https://youtu.be/Ke-byMYAcrI?si=z9fchPdW61c2Fyf1"
   },
   {
     id: "6",
     title: "Making Safe Choices",
     description: "Learning to recognize and get out of unsafe situations",
-    duration: "8:30",
+    duration: "4:45",
     category: "Safety Skills",
     thumbnail: "🧭",
-    videoUrl: "https://www.youtube.com/embed/example6"
+    videoUrl: "https://www.youtube.com/watch?v=CqH2QYt6oOc&t=34s"
   },
   {
     id: "7",
     title: "Stories of Hope",
     description: "Inspiring stories from other kids who found help and healing",
-    duration: "10:15",
+    duration: "3:32",
     category: "Inspiration",
     thumbnail: "🌈",
-    videoUrl: "https://www.youtube.com/embed/example7"
+    videoUrl: "https://www.youtube.com/watch?v=CAdu-84Q5Nk"
   },
   {
     id: "8",
     title: "Calming Your Worries",
     description: "Gentle exercises to help you feel peaceful and safe",
-    duration: "5:45",
+    duration: "1:31",
     category: "Relaxation",
     thumbnail: "🧘",
-    videoUrl: "https://www.youtube.com/embed/example8"
+    videoUrl: "https://www.youtube.com/watch?v=tiEZRd55uvY"
   },
   {
     id: "9",
     title: "Your Rights as a Child",
     description: "Understanding that every child deserves to be safe and loved",
-    duration: "6:00",
+    duration: "6:13",
     category: "Rights Education",
     thumbnail: "⚖️",
-    videoUrl: "https://www.youtube.com/embed/example9"
+    videoUrl: "https://www.youtube.com/watch?v=TafvHxXFzUM"
   }
 ];
 
@@ -110,6 +110,34 @@ export default function ChildAbuseVideoPlayer() {
     return childAbuseVideos.slice(0, 4);
   };
 
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+    const filtered = category === "All" 
+      ? childAbuseVideos 
+      : childAbuseVideos.filter(video => video.category === category);
+    if (filtered.length > 0) {
+      setSelectedVideo(filtered[0]);
+    }
+  };
+
+  const getEmbedUrl = (url: string) => {
+    let videoId = '';
+    
+    if (url.includes('youtube.com/watch?v=')) {
+      videoId = url.split('v=')[1].split('&')[0];
+    } else if (url.includes('youtu.be/')) {
+      videoId = url.split('youtu.be/')[1].split('?')[0];
+    } else if (url.includes('youtube.com/embed/')) {
+      return `${url}?autoplay=1&mute=1`;
+    }
+    
+    if (videoId) {
+      return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+    }
+    
+    return url;
+  };
+
   if (selectedVideo) {
     return (
       <div>
@@ -122,7 +150,7 @@ export default function ChildAbuseVideoPlayer() {
         
         <div className="bg-black rounded-lg overflow-hidden mb-4">
           <iframe
-            src={selectedVideo.videoUrl}
+            src={getEmbedUrl(selectedVideo.videoUrl)}
             title={selectedVideo.title}
             className="w-full h-64"
             frameBorder="0"
@@ -163,7 +191,7 @@ export default function ChildAbuseVideoPlayer() {
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategoryClick(category)}
               className={`px-3 py-1 rounded-full text-sm transition ${
                 selectedCategory === category
                   ? "bg-purple-600 text-white"
@@ -243,10 +271,10 @@ export default function ChildAbuseVideoPlayer() {
       <div className="mt-4 bg-red-50 rounded-lg p-4">
         <h4 className="font-semibold mb-2 text-red-800">🆘 Emergency Help:</h4>
         <ul className="text-sm space-y-1 text-red-700">
-          <li>• Call 911 if you're in immediate danger</li>
-          <li>• Call Child Abuse Hotline: 1-800-4-A-CHILD</li>
-          <li>• Text "SAFE" to 741741 for crisis support</li>
-          <li>• Tell a teacher, doctor, or police officer</li>
+        
+          <li>• Call Child Abuse Hotline: 1121</li>
+          <li>• Call 0800-89457 for crisis support</li>
+          <li>• 24/7 Online Support</li>
         </ul>
       </div>
 

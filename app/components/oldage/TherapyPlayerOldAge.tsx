@@ -20,8 +20,8 @@ const RECOMMENDED_VIDEOS = [
   { id: "qp0HIF3SfI4", title: "Brené Brown — The Power of Vulnerability", person: "Brené Brown" },
   { id: "IHyR7p6_hn0", title: "Jane Fonda — Life's Third Act (Aging Positivity)", person: "Jane Fonda" },
   { id: "2OEL4P1Rz04", title: "Simon Sinek — Why Good Leaders Make You Feel Safe", person: "Simon Sinek" },
-  { id: "XxVg_s8xAms", title: "Guided Breathing for Stress Relief", person: "Breathing" },
-  { id: "6Oo_x0UFlyM", title: "5 Minute Calming Meditation", person: "Meditation" },
+  { id: "9Fp9AW57tYg", title: "Guided Breathing for Stress Relief", person: "Breathing" },
+  { id: "mSRNst6J1YM", title: "5 Minute Calming Meditation", person: "Meditation" },
 ];
 
 type Props = {

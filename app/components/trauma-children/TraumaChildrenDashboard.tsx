@@ -1,17 +1,17 @@
 "use client";
 
-import TraumaQuestionnaire from "./TraumaQuestionnaire";
+import QuestionnaireForm from "../database/QuestionnaireForm";
 import TraumaVideoPlayer from "./TraumaVideoPlayer";
 import Navbar from "../Home/Nevbar";
 
-export default function TraumaDashboard() {
+export default function TraumaChildrenDashboard() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Header */}
       <Navbar />
       
       {/* Main Content */}
-      <main className="flex-grow bg-gradient-to-br from-blue-50 to-purple-50">
+      <main className="flex-grow bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto p-6">
           <header className="mb-8">
             <h1 className="text-4xl font-bold text-[#064E3B] mb-2">
@@ -22,23 +22,6 @@ export default function TraumaDashboard() {
             </p>
           </header>
 
-          <nav className="bg-white rounded-lg shadow-md p-4 mb-8">
-            <div className="flex flex-wrap gap-4">
-              <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                Dashboard
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">
-                Resources
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">
-                Progress
-              </button>
-              <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">
-                Help
-              </button>
-            </div>
-          </nav>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-6">
               <h2 className="text-2xl font-semibold text-[#064E3B] mb-4">
@@ -47,7 +30,7 @@ export default function TraumaDashboard() {
               <p className="text-gray-600 mb-6">
                 Help us understand how you're feeling with these gentle questions
               </p>
-              <TraumaQuestionnaire />
+              <QuestionnaireForm formType="trauma" showResults={true} />
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-6">

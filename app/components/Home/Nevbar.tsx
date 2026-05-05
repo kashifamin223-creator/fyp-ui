@@ -127,6 +127,7 @@ export default function Navbar() {
         </div>
 
         {/* OTHER LINKS */}
+        <NavItem label="VR/AR" href="/vrar" />
         <NavItem label="About" href="/about" />
         <NavItem label="References" href="/references" />
 

@@ -13,49 +13,32 @@ export default function HomePage() {
     }`}>
       <Navbar />
       
+      
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className={`relative py-20 px-6 ${
-          theme === 'dark' 
-            ? 'bg-gradient-to-br from-gray-800 to-gray-900' 
-            : 'bg-gradient-to-br from-blue-50 to-green-50'
-        }`}>
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${
-              theme === 'dark' ? 'text-gray-100' : 'text-[#064E3B]'
-            }`}>
-              Mental Healthcare Therapy
-            </h1>
-            <p className={`text-xl md:text-2xl mb-8 max-w-3xl mx-auto ${
-              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              Providing comprehensive mental health support for children, students, and professionals 
+        <section 
+  className="relative py-20 px-6"
+  style={{
+    backgroundImage: "url('/mental.png')",
+    backgroundSize: "cover",
+    backgroundPosition: "center"
+  }}
+>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50"></div>
+
+  {/* Content */}
+  <div className="relative max-w-7xl mx-auto text-center">
+    <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+      Mental Healthcare Therapy
+    </h1>
+
+    <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-gray-200">
+      Providing comprehensive mental health support for children, students, and professionals 
               through accessible, compassionate, and evidence-based therapeutic resources.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/register" 
-                className={`px-8 py-3 rounded-lg font-semibold transition ${
-                  theme === 'dark' 
-                    ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                Get Started
-              </Link>
-              <Link 
-                href="/about" 
-                className={`px-8 py-3 rounded-lg font-semibold transition ${
-                  theme === 'dark' 
-                    ? 'bg-gray-700 text-gray-200 hover:bg-gray-600' 
-                    : 'bg-white text-gray-800 hover:bg-gray-100'
-                }`}
-              >
-                Learn More
-              </Link>
-            </div>
-          </div>
-        </section>
+    </p>
+  </div>
+</section>
 
         {/* Services Overview */}
         <section className={`py-16 px-6 ${
@@ -252,12 +235,12 @@ export default function HomePage() {
                 <p className={`font-bold text-lg ${
                   theme === 'dark' ? 'text-red-100' : 'text-red-600'
                 }`}>
-                  988
+                  UMANG PAKISTAN
                 </p>
                 <p className={`text-sm ${
                   theme === 'dark' ? 'text-red-200' : 'text-red-700'
                 }`}>
-                  Available 24/7
+                  +92311-7786264
                 </p>
               </div>
               <div className={`p-6 rounded-lg ${
@@ -267,17 +250,17 @@ export default function HomePage() {
                 <h3 className={`font-semibold mb-2 ${
                   theme === 'dark' ? 'text-red-100' : 'text-red-800'
                 }`}>
-                  Crisis Text Line
+                  Counseling Hotline
                 </h3>
                 <p className={`font-bold text-lg ${
                   theme === 'dark' ? 'text-red-100' : 'text-red-600'
                 }`}>
-                  Text HOME to 741741
+                  National Youth Helpline
                 </p>
                 <p className={`text-sm ${
                   theme === 'dark' ? 'text-red-200' : 'text-red-700'
                 }`}>
-                  Free, 24/7 support
+                  0800-69457
                 </p>
               </div>
               <div className={`p-6 rounded-lg ${
@@ -287,17 +270,17 @@ export default function HomePage() {
                 <h3 className={`font-semibold mb-2 ${
                   theme === 'dark' ? 'text-red-100' : 'text-red-800'
                 }`}>
-                  Child Abuse Hotline
+                  Child Abuse
                 </h3>
                 <p className={`font-bold text-lg ${
                   theme === 'dark' ? 'text-red-100' : 'text-red-600'
                 }`}>
-                  1-800-4-A-CHILD
+                  Child Protection & Welfare Bureau
                 </p>
                 <p className={`text-sm ${
                   theme === 'dark' ? 'text-red-200' : 'text-red-700'
                 }`}>
-                  Confidential support
+                  1121
                 </p>
               </div>
             </div>
@@ -360,7 +343,7 @@ export default function HomePage() {
                     <h4 className={`font-semibold ${
                       theme === 'dark' ? 'text-gray-100' : 'text-gray-800'
                     }`}>
-                      Sarah M.
+                      Aitzaz Hussain.
                     </h4>
                     <p className={`text-sm ${
                       theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
@@ -387,7 +370,7 @@ export default function HomePage() {
                     <h4 className={`font-semibold ${
                       theme === 'dark' ? 'text-gray-100' : 'text-gray-800'
                     }`}>
-                      John D.
+                      Kashif Amin.
                     </h4>
                     <p className={`text-sm ${
                       theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
@@ -414,7 +397,7 @@ export default function HomePage() {
                     <h4 className={`font-semibold ${
                       theme === 'dark' ? 'text-gray-100' : 'text-gray-800'
                     }`}>
-                      Emily R.
+                      Dr.Nabeel Ibad (Neuro psychologist)
                     </h4>
                     <p className={`text-sm ${
                       theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
@@ -432,47 +415,9 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        <section className={`py-16 px-6 ${
-          theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-        }`}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className={`text-3xl md:text-4xl font-bold mb-6 ${
-              theme === 'dark' ? 'text-gray-100' : 'text-[#064E3B]'
-            }`}>
-              Ready to Start Your Journey?
-            </h2>
-            <p className={`text-lg mb-8 ${
-              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              Take the first step towards better mental health today. Our compassionate team is here to support you.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/login" 
-                className={`px-8 py-3 rounded-lg font-semibold transition ${
-                  theme === 'dark' 
-                    ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                    : 'bg-blue-600 text-white hover:bg-blue-700'
-                }`}
-              >
-                Get Started Now
-              </Link>
-              <Link 
-                href="/about" 
-                className={`px-8 py-3 rounded-lg font-semibold transition ${
-                  theme === 'dark' 
-                    ? 'bg-gray-700 text-gray-200 hover:bg-gray-600' 
-                    : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
-                }`}
-              >
-                Learn More About Us
-              </Link>
-            </div>
-          </div>
-        </section>
       </main>
-    </div>
+      </div>
+
+        
   );
 }

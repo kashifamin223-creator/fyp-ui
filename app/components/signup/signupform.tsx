@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import Navbar from "../Home/Nevbar";
 import { useTheme } from "../ThemeContext";
+import { apiService, handleApiResponse, UserSession } from "../../services/api";
+import { useRouter } from "next/navigation";
 
 interface FormErrors {
   email?: string;
@@ -17,7 +19,9 @@ export default function Form() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { theme } = useTheme();
+  const router = useRouter();
 
   const validateEmail = (emailValue: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -49,18 +53,38 @@ export default function Form() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validateForm()) {
-      console.log("Email:", email);
-      console.log("Password:", password);
-      alert("Account created successfully!");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
-      setErrors({});
-      setSubmitted(false);
+    
+    if (!validateForm()) {
+      return;
     }
+
+    setIsLoading(true);
+    setSubmitted(true);
+
+    const success = handleApiResponse(
+      await apiService.signup({ email, password }),
+      (data) => {
+        console.log("Signup successful:", data);
+        // Store user session
+        UserSession.setUser(data);
+        // You might get a token from the response, store it
+        if (data.token) {
+          UserSession.setToken(data.token);
+        }
+        alert("Account created successfully!");
+        // Redirect to home or login
+        router.push("/home");
+      },
+      (error) => {
+        console.error("Signup failed:", error);
+        alert(`Signup failed: ${error}`);
+      }
+    );
+
+    setIsLoading(false);
+    setSubmitted(false);
   };
 
   return (
@@ -152,20 +176,23 @@ export default function Form() {
 
           <button
             type="submit"
+            disabled={isLoading}
             className={`w-full py-2 rounded-lg font-medium transition ${
-              theme === 'dark' 
-                ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                : 'bg-blue-600 text-white hover:bg-blue-700'
+              isLoading
+                ? 'bg-gray-400 cursor-not-allowed'
+                : theme === 'dark' 
+                  ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                  : 'bg-blue-600 text-white hover:bg-blue-700'
             }`}
           >
-            {submitted ? "Creating Account..." : "Create Account"}
+            {isLoading || submitted ? "Creating Account..." : "Create Account"}
           </button>
 
           <p className={`text-center text-sm mt-4 ${
             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
           }`}>
             Already have an account?{" "}
-            <Link href="./" className="text-blue-600 hover:underline">
+            <Link href="/" className="text-blue-600 hover:underline">
               Login
             </Link>
           </p>

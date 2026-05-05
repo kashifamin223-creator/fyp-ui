@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { apiService, handleApiResponse, UserSession } from "../../services/api";
 
 interface Question {
   id: number;
@@ -136,8 +137,35 @@ export default function ChildAbuseQuestionnaire() {
     }
   };
 
-  const calculateResults = () => {
-    setShowResults(true);
+  const calculateResults = async () => {
+    // Get current user ID from session
+    const user = UserSession.getUser();
+    const userId = user?.id || 0;
+    
+    const submissionData = {
+      userid: userId,
+      q1: answers[0] || 0,
+      q2: answers[1] || 0,
+      q3: answers[2] || 0,
+      q4: answers[3] || 0,
+      q5: answers[4] || 0,
+      q6: answers[5] || 0,
+      q7: answers[6] || 0,
+      q8: answers[7] || 0,
+      q9: answers[8] || 0,
+    };
+
+    const success = handleApiResponse(
+      await apiService.submitChildForm(submissionData),
+      (data) => {
+        console.log("Child abuse form submitted successfully:", data);
+        setShowResults(true);
+      },
+      (error) => {
+        console.error("Child abuse form submission failed:", error);
+        alert(`Submission failed: ${error}`);
+      }
+    );
   };
 
   const getTotalScore = () => {
@@ -203,10 +231,9 @@ export default function ChildAbuseQuestionnaire() {
         <div className="bg-red-50 rounded-lg p-4 mb-6">
           <h4 className="font-semibold mb-2 text-red-800">Get Help Now:</h4>
           <ul className="text-left text-sm space-y-2">
-            <li>• Call 911 if you're in immediate danger</li>
-            <li>• Call Child Abuse Hotline: 1-800-4-A-CHILD</li>
-            <li>• Tell a teacher, doctor, or another trusted adult</li>
-            <li>• Text "SAFE" to 741741 for crisis support</li>
+            <li>• Call 1121 if you're in immediate danger</li>
+            <li>• Call Child Abuse Hotline: 0800-89457</li>
+            <li>• 24/7 Online Support</li>
           </ul>
         </div>
 
